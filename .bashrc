@@ -108,7 +108,10 @@ WHITE=$(tput setaf 7)
 RESET=$(tput sgr 0)
 
 ### The Prompts
-
+#  {green}     {red}           {yellow}
+# [user@host] [~/path/to/dir] [vc:branch]
+# $ \  {green $}
+# >    {green}
 PS1='\[$BOLD\]\[$GREEN\][\u@\h] \[$RED\][\w] \[$YELLOW\]$(vcprompt -f '[%s:%b%m%u%a]')\n\[$RESET\]\[$GREEN\]\$\[$RESET\] '
 PS2='\[$GREEN\]>\[$RESET\] '
 
