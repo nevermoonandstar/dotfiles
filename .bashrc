@@ -78,5 +78,6 @@ PURPLE=$(tput setaf 5)
 CYAN=$(tput setaf 6)
 WHITE=$(tput setaf 7)
 RESET=$(tput sgr 0)
-PS1='\[$BOLD\]\[$GREEN\]\u @ \h: \[$RED\]\w \[$YELLOW\]$(vcprompt -f '[%s:%b%m%u%a]')\[$RESET\]\n\[$GREEN\]\$ \[$RESET\]'
+PS1='\[$BOLD\]\[$GREEN\][\u@\h] \[$RED\][\w] \[$YELLOW\]$(vcprompt -f '[%s:%b%m%u%a]')\n\[$RESET\]\[$GREEN\]\$\[$RESET\] '
+PS2='\[$GREEN\]>\[$RESET\] '
 [[ -s "/home/hoppe/.rvm/scripts/rvm" ]] && source "/home/hoppe/.rvm/scripts/rvm"
