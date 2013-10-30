@@ -69,6 +69,27 @@ fi
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# Aliases
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+alias ls='ls -h --color' # Human sizes and color
+alias lsa='ls -ha --color'
+alias lx='ls -lXB'       # Sort by extension
+alias lxa='lsa -lXB'
+alias lk='ls -lSr'       # Sort by size, biggest last
+alias lka='lsa -lSr'
+alias lt='ls -ltr'       # Sort by date, recent last
+alias lta='lsa -ltr'
+alias lc='ls -ltcr'      # Sort by modified time, recent last
+alias lca='lsa -ltcr'
+alias lu='ls -ltur'      # Sort by access time, recet last
+# opted not to create a 'lua' because of lua being a programming language.
+# Fancy Text Functions
+
 BOLD=$(tput bold)
 RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
@@ -78,6 +99,10 @@ PURPLE=$(tput setaf 5)
 CYAN=$(tput setaf 6)
 WHITE=$(tput setaf 7)
 RESET=$(tput sgr 0)
+
+# The Prompts
+
 PS1='\[$BOLD\]\[$GREEN\][\u@\h] \[$RED\][\w] \[$YELLOW\]$(vcprompt -f '[%s:%b%m%u%a]')\n\[$RESET\]\[$GREEN\]\$\[$RESET\] '
 PS2='\[$GREEN\]>\[$RESET\] '
+
 [[ -s "/home/hoppe/.rvm/scripts/rvm" ]] && source "/home/hoppe/.rvm/scripts/rvm"
