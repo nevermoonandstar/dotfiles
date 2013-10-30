@@ -8,8 +8,6 @@
  '(c-set-offset (quote defun-close) t)
  '(column-number-mode t)
  '(compilation-message-face (quote default))
- '(custom-enabled-themes (quote (underwater)))
- '(custom-safe-themes (quote ("1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "e16a771a13a202ee6e276d06098bc77f008b73bbac4d526f160faa2d76c1dd0e" "7a2c92b6267b84ae28a396f24dd832e29a164c1942f1f8b3fe500f1c25f8e09d" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(fci-rule-color "#282a2e")
  '(global-font-lock-mode 1)
  '(global-linum-mode 1)
@@ -106,7 +104,7 @@
 (global-set-key [f11] (lambda () (interactive) (menu-bar-mode 0)))
 (global-set-key [f12] (lambda () (interactive) (menu-bar-mode 1)))
 
-(load-theme 'underwater)
+(load-theme 'underwater t)
 (add-to-list 'load-path "~/.emacs.d/vendor/powerline")
 (require 'powerline)
 (powerline-default-theme)
