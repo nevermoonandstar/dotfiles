@@ -69,25 +69,31 @@ fi
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# Aliases
+### Aliases
 
+#../.../..../.....
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias ls='ls -h --color' # Human sizes and color
-alias lsa='ls -ha --color'
-alias lx='ls -lXB'       # Sort by extension
-alias lxa='lsa -lXB'
-alias lk='ls -lSr'       # Sort by size, biggest last
-alias lka='lsa -lSr'
-alias lt='ls -ltr'       # Sort by date, recent last
-alias lta='lsa -ltr'
-alias lc='ls -ltcr'      # Sort by modified time, recent last
-alias lca='lsa -ltcr'
-alias lu='ls -ltur'      # Sort by access time, recet last
+#ls
+alias ls='ls -lh --color' # Human sizes and color in list form
+alias lsa='ls -lha --color'
+alias lx='ls -XB'         # Sort by extension
+alias lxa='lsa -XB'
+alias lk='ls -Sr'         # Sort by size, biggest last
+alias lka='lsa -Sr'
+alias lt='ls -tr'         # Sort by date, recent last
+alias lta='lsa -tr'
+alias lc='ls -tcr'        # Sort by modified time, recent last
+alias lca='lsa -tcr'
+alias lu='ls -tur'        # Sort by access time, recet last
 # opted not to create a 'lua' because of lua being a programming language.
+
+#Custom commands
+alias stats='date; acpi'
+
 # Fancy Text Functions
 
 BOLD=$(tput bold)
