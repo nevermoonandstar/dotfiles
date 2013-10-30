@@ -37,7 +37,7 @@ fi
 #  fi
 #fi
 
-# sudo hint
+### sudo hint
 if [ ! -e "$HOME/.sudo_as_admin_successful" ] && [ ! -e "$HOME/.hushlogin" ] ; then
     case " $(groups) " in *\ admin\ *)
     if [ -x /usr/bin/sudo ]; then
@@ -66,6 +66,7 @@ if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-no
 		fi
 	}
 fi
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -88,13 +89,13 @@ alias lt='ls -tr'         # Sort by date, recent last
 alias lta='lsa -tr'
 alias lc='ls -tcr'        # Sort by modified time, recent last
 alias lca='lsa -tcr'
-alias lu='ls -tur'        # Sort by access time, recet last
+alias lu='ls -tur'        # Sort by access time, recent last
 # opted not to create a 'lua' because of lua being a programming language.
 
 #Custom commands
 alias stats='date; acpi'
 
-# Fancy Text Functions
+### Fancy Text Functions
 
 BOLD=$(tput bold)
 RED=$(tput setaf 1)
@@ -106,9 +107,10 @@ CYAN=$(tput setaf 6)
 WHITE=$(tput setaf 7)
 RESET=$(tput sgr 0)
 
-# The Prompts
+### The Prompts
 
 PS1='\[$BOLD\]\[$GREEN\][\u@\h] \[$RED\][\w] \[$YELLOW\]$(vcprompt -f '[%s:%b%m%u%a]')\n\[$RESET\]\[$GREEN\]\$\[$RESET\] '
 PS2='\[$GREEN\]>\[$RESET\] '
 
+### rvm path (throws a fit if it's elsewhere in the file)
 [[ -s "/home/hoppe/.rvm/scripts/rvm" ]] && source "/home/hoppe/.rvm/scripts/rvm"
