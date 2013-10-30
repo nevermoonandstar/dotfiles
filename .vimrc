@@ -1,6 +1,6 @@
 set nocompatible
 syntax on
-colorscheme solarized
+colorscheme blue
 set background=dark
 
 set guifont=monoOne\ 14
