@@ -1,0 +1,14 @@
+nil.defined?
+defined? 1
+defined? ""
+1 == 5
+1 == "foo"
+1 === foo
+1 === "foo"
+1 ==== "foo"
+raise "foo"
+a &&= 2
+a ||= 2
+a &&= 3
+a
+exit

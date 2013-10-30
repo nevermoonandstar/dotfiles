@@ -1,0 +1,8 @@
+[user]
+	name = Eric Hoppe
+	email = hoppeeric@gmail.com
+[color]
+	ui = auto
+[core]
+	editor = vim
+	autocrlf = input
