@@ -145,7 +145,7 @@ emacs_keys=off
 # or sending mail.  If no editor is specified, then file editing is disabled
 # unless it is activated from the command line, and the built-in line editor
 # will be used for sending mail.
-file_editor=emacs
+file_editor=vim
 
 # The file_sorting_method specifies which value to sort on when viewing
 # file lists such as FTP directories.  The options are:
@@ -286,7 +286,7 @@ select_popups=on
 # The mode set at startup can be changed via the "show color" option in
 # the 'o'ptions menu.  If the option settings are saved, the "on" and
 # "off" "show color" settings will be treated as "default".
-show_color=never
+show_color=always
 
 # show_cursor specifies whether to 'hide' the cursor to the right (and
 # bottom, if possible) of the screen, or to place it to the left of the
@@ -304,7 +304,7 @@ show_cursor=on
 # honored only if enabled via userdefs.h and/or lynx.cfg, and not
 # restricted via a command line switch.  If display of hidden files
 # is disabled, creation of such files via Lynx also is disabled.
-show_dotfiles=off
+show_dotfiles=on
 
 # If sub_bookmarks is not turned "off", and multiple bookmarks have
 # been defined (see below), then all bookmark operations will first
