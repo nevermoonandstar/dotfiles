@@ -13,16 +13,6 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-### Commented out, don't overwrite xterm -T "title" -n "icontitle" by default.
-### If this is an xterm set the title to user@host:dir
-#case "$TERM" in
-#xterm*|rxvt*)
-#    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
-#    ;;
-#*)
-#    ;;
-#esac
-
 ### enable bash completion in interactive shells
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -89,8 +79,11 @@ alias lu='ls -tur'        # Sort by access time, recent last
 
 #Custom commands
 alias stats='date; acpi'
-alias e='emacs' # Talk about lazy!
-alias v='vim'   # Dial v for Vim!
+
+#Lazy!
+alias e='emacs'  # Talk about lazy! [e]macs!
+alias v='vim'    # Dial v for Vim!
+alias s='source' # Or s for a new bash config.
 
 ### Fancy Text Functions
 
