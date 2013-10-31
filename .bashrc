@@ -89,6 +89,8 @@ alias lu='ls -tur'        # Sort by access time, recent last
 
 #Custom commands
 alias stats='date; acpi'
+alias e='emacs' # Talk about lazy!
+alias v='vim'   # Dial v for Vim!
 
 ### Fancy Text Functions
 
