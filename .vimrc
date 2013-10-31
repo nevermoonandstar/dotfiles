@@ -1,4 +1,6 @@
 set nocompatible
+filetype plugin on
+filetype indent on
 syntax on
 colorscheme blue
 set background=dark
@@ -48,7 +50,7 @@ function MyDiff()
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
-set fileformats=dos,mac,unix
+set fileformat=unix
 
 let g:netrw_liststyle=3 " :e begins in tree view
 
@@ -101,11 +103,8 @@ set printoptions+=portrait:n " print landscape, when toggling with printer pref
 set printoptions+=syntax:n   " do not print syntax coloration
 
 " ruby mode: 2 space indents
-autocmd Filetype html setlocal ts=2 sw=2 expandtab
+" set this stuff in ~/.vim/ftplugin/ruby.vim as well.
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
-autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 expandtab
-
-let s:ruby_path="c:/Ruby200-x64/bin"
 
 map <F2> :set background=light <cr> " F2: use light background
 map <F3> :set background=dark <cr> " F3: use dark background
