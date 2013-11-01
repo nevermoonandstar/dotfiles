@@ -4,6 +4,7 @@ filetype indent on
 syntax on
 colorscheme blue
 set background=dark
+set t_Co=256
 
 set guifont=monoOne\ 14
 set guioptions-=m " remove menu bar
