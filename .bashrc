@@ -85,6 +85,9 @@ alias e='emacs'  # Talk about lazy! [e]macs!
 alias v='vim'    # Dial v for Vim!
 alias s='source' # Or s for a new bash config.
 
+#Vimlikes
+alias :q='exit'
+
 ### Fancy Text Functions
 
 BOLD=$(tput bold)
