@@ -84,9 +84,11 @@ alias lu='ls -tur'        # Sort by access time, recent last
 alias stats='date; acpi'
 
 #Lazy!
-alias e='emacs'  # Talk about lazy! [e]macs!
-alias v='vim'    # Dial v for Vim!
-alias s='source' # Or s for a new bash config.
+alias e='emacs'    # Talk about lazy! [e]macs!
+alias v='vim'      # Dial v for Vim!
+alias s='source'   # Or s for a new bash config.
+alias py='python3' # Python!
+alias py2='python' # Or 2.7.x, if you _have_ to.
 
 #Vimlikes
 alias :q='exit'
@@ -94,13 +96,13 @@ alias :q='exit'
 ### Fancy Text Functions
 
 BOLD=$(tput bold)
-RED=$(tput setaf 1)
-GREEN=$(tput setaf 2)
-YELLOW=$(tput setaf 3)
-BLUE=$(tput setaf 4)
-PURPLE=$(tput setaf 5)
-CYAN=$(tput setaf 6)
-WHITE=$(tput setaf 7)
+RED=$(tput setaf 196)
+GREEN=$(tput setaf 46)
+YELLOW=$(tput setaf 226)
+BLUE=$(tput setaf 18)
+PURPLE=$(tput setaf 165)
+CYAN=$(tput setaf 51)
+WHITE=$(tput setaf 255)
 RESET=$(tput sgr 0)
 
 ### The Prompts
