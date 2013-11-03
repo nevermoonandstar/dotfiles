@@ -59,10 +59,10 @@ set shortmess=atI " [a]ll short messages, [t]runcate on load, no [I]ntro screen
 
 let g:matchparen_insert_timeout=5 " Shorter time out of paren match find.
 set laststatus=2 " status line of last window is [0] never [2] always on
-set statusline+=%F "[F]ull file path + file
-set statusline+=%=[\ L:%l/%L\ C:%c\ F:%p/100\ ]
-" [%=]right justify, [%l]ine out of [%L]ines, [%c]olumn numbers, and
-" [%p]ercent of file the cursor is at.
+set statusline+=%F\ %r%m "[F]ull file path, [%r]ead-only and [%m]odified flags
+set statusline+=%=[\ %{&ff}\ ]\ [\ L:%l/%L\ C:%c\ F:%p/100\ ]
+" [%=]right justify, %{&f[ile]f[ormat]} [%l]ine out of [%L]ines, [%c]olumn
+" numbers, and [%p]ercent of file the cursor is at.
 set textwidth=79 " nothing by itself, but allows colorcolumn to work to
 set nosmartindent " no smart autoindenting
 set autoindent " autoindenting
