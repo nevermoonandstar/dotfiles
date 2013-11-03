@@ -78,6 +78,14 @@ extract ()
     fi
 }
 
+### Convert all files in directory to Unix EOL's
+# Requires dos2unix package
+eol_dir ()
+{ # --quiet and --Follow symlinks to convert targets
+    find . -type f -print0 | xargs -0 dos2unix -q -F
+    find . -type f -print0 | xargs -0 mac2unix -q -F
+}
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
