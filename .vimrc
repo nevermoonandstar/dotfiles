@@ -51,7 +51,7 @@ function MyDiff()
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
-set fileformat=unix
+set fileformats=unix,dos,mac
 
 let g:netrw_liststyle=3 " :e begins in tree view
 
@@ -80,8 +80,6 @@ set nowrap " no line wrapping
 
 set list                     " list invisible characters,
 set listchars=tab:>·,trail:· " but only tabs and trailing spaces
-
-filetype indent off " turn on the indent plugin
 
 set ignorecase " ignore case while searching
 
