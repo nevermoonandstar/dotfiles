@@ -86,6 +86,13 @@ eol_dir ()
     find . -type f -print0 | xargs -0 mac2unix -q -F
 }
 
+### Dump stats
+stats ()
+{
+    date
+    acpi
+}
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -110,9 +117,6 @@ alias lc='ls -tcr'        # Sort by modified time, recent last
 alias lca='lsa -tcr'
 alias lu='ls -tur'        # Sort by access time, recent last
 # opted not to create a 'lua' because of lua being a programming language.
-
-#Custom commands
-alias stats='date; acpi'
 
 #Lazy!
 alias e='emacs'    # Talk about lazy! [e]macs!
