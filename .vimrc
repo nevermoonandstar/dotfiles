@@ -104,7 +104,7 @@ set printoptions+=syntax:n   " do not print syntax coloration
 
 " ruby mode: 2 space indents
 " set this stuff in ~/.vim/ftplugin/ruby.vim as well.
-autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+autocmd Filetype ruby setlocal sts=2 ts=2 sw=2 expandtab
 
 map <F2> :set background=light <cr> " F2: use light background
 map <F3> :set background=dark <cr> " F3: use dark background
