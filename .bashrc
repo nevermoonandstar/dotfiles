@@ -126,6 +126,7 @@ alias lu='ls -tur'        # Sort by access time, recent last
 # opted not to create a 'lua' because of lua being a programming language.
 
 #Lazy!
+alias c='cd'       # 1/2 the keys!
 alias e='emacs'    # Talk about lazy! [e]macs!
 alias vi='vim'     # vim always.
 alias v='vim'      # Dial v for Vim!
