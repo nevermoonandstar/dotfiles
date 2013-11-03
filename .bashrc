@@ -109,6 +109,7 @@ alias stats='date; acpi'
 #Lazy!
 alias e='emacs'    # Talk about lazy! [e]macs!
 alias v='vim'      # Dial v for Vim!
+alias vi='vim'     # vim always.
 alias s='source'   # Or s for a new bash config.
 alias py='python3' # Python!
 alias py2='python' # Or 2.7.x, if you _have_ to.
