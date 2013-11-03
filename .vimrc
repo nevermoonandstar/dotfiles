@@ -2,7 +2,7 @@ set nocompatible
 filetype plugin on
 filetype indent on
 syntax on
-colorscheme blue
+colorscheme calmar256-dark
 set background=dark
 set t_Co=256
 
