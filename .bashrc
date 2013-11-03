@@ -99,10 +99,17 @@ export PATH="/usr/local/heroku/bin:$PATH"
 ### Aliases
 
 #../.../..../.....
+#..[1-5]
 alias ..='cd ..'
+alias ..1='cd ..'
 alias ...='cd ../..'
+alias ..2='cd ../..'
 alias ....='cd ../../..'
+alias ..3='cd ../../..'
 alias .....='cd ../../../..'
+alias ..4='cd ../../../..'
+alias ......='cd ../../../../..'
+alias ..5='cd ../../../../..'
 
 #ls
 alias ls='ls -lh --color' # Human sizes and color in list form
@@ -120,8 +127,8 @@ alias lu='ls -tur'        # Sort by access time, recent last
 
 #Lazy!
 alias e='emacs'    # Talk about lazy! [e]macs!
-alias v='vim'      # Dial v for Vim!
 alias vi='vim'     # vim always.
+alias v='vim'      # Dial v for Vim!
 alias s='source'   # Or s for a new bash config.
 alias py='python3' # Python!
 alias py2='python' # Or 2.7.x, if you _have_ to.
