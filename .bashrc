@@ -151,7 +151,7 @@ RESET=$(tput sgr 0)
 
 ### The Prompts
 #  {green}     {red}           {yellow}
-# [user@host] [~/path/to/dir] [vc:branch]
+# [user@host] [~/path/to/dir] [vc:branch] {bold}
 # $ \  {green}
 # >    {green}
 PS1='\[$BOLD\]\[$GREEN\][\u@\h] \[$RED\][\w] \[$YELLOW\]$(vcprompt -f '[%s:%b%m%u%a]')\n\[$RESET\]\[$GREEN\]\$\[$RESET\] '
