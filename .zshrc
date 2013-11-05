@@ -87,15 +87,15 @@ alias py2='python' # Or 2.7.x, if you _have_ to.
 alias :q='exit'
 
 ### Fancy Text Functions
-BOLD=$(tput bold)
-RED=$(tput setaf 196)
-GREEN=$(tput setaf 46)
-YELLOW=$(tput setaf 226)
-BLUE=$(tput setaf 18)
-PURPLE=$(tput setaf 165)
-CYAN=$(tput setaf 51)
-WHITE=$(tput setaf 255)
-RESET=$(tput sgr 0)
+BOLD=%{$(tput bold)%}
+RED=%{$(tput setaf 196)%}
+GREEN=%{$(tput setaf 46)%}
+YELLOW=%{$(tput setaf 226)%}
+BLUE=%{$(tput setaf 18)%}
+PURPLE=%{$(tput setaf 165)%}
+CYAN=%{$(tput setaf 51)%}
+WHITE=%{$(tput setaf 255)%}
+RESET=%{$(tput sgr 0)%}
 
 ### Needed for vcprompt (~/bin/vcprompt)
 setopt prompt_subst
