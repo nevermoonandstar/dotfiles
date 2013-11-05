@@ -1,9 +1,6 @@
 ### 256 Color Mode
 export TERM=xterm-256color
 
-### Needed for vcprompt (~/bin/vcprompt)
-setopt prompt_subst
-
 ### Extract function
 extract ()
 {
@@ -97,12 +94,15 @@ CYAN=$(tput setaf 51)
 WHITE=$(tput setaf 255)
 RESET=$(tput sgr 0)
 
+### Needed for vcprompt (~/bin/vcprompt)
+setopt prompt_subst
+
 ### The Prompts
 #  {green}     {red}           {yellow}
 # [user@host] [~/path/to/dir] [vc:branch] {bold}
 # $ \  {green}
 # >    {green}
-PS1="${BOLD}${GREEN}[%n@%m] ${RED}[%~] ${YELLOW}$(vcprompt -f '[%s:%b%m%u%a]')${RESET}${GREEN}
-%#${RESET} "
-PS2="${GREEN}>${RESET} "
+PS1='${BOLD}${GREEN}[%n@%m] ${RED}[%~] ${YELLOW}$(vcprompt -f "[%s:%b%m%u%a]")${RESET}${GREEN}
+%#${RESET} '
+PS2='${GREEN}>${RESET} '
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
