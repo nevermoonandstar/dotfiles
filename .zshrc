@@ -108,4 +108,3 @@ setopt prompt_subst
 PS1='${BOLD}${GREEN}[%n@%m] ${RED}[%~] ${YELLOW}$(vcprompt -f "[%s:%b%m%u%a]")${RESET}${GREEN}
 %#${RESET} '
 PS2='${GREEN}>${RESET} '
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
