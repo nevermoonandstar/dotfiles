@@ -153,5 +153,7 @@ RESET=$(tput sgr 0)
 PS1='\[$BOLD\]\[$GREEN\][\u@\h] \[$RED\][\w] \[$YELLOW\]$(vcprompt -f '[%s:%b%m%u%a]')\n\[$RESET\]\[$GREEN\]\$\[$RESET\] '
 PS2='\[$GREEN\]>\[$RESET\] '
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
 ### rvm path (throws a fit if it's elsewhere in the file)
 [[ -s "/home/hoppe/.rvm/scripts/rvm" ]] && source "/home/hoppe/.rvm/scripts/rvm"

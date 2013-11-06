@@ -108,3 +108,5 @@ setopt prompt_subst
 PS1='${BOLD}${GREEN}[%n@%m] ${RED}[%~] ${YELLOW}$(vcprompt -f "[%s:%b%m%u%a]")${RESET}${GREEN}
 %#${RESET} '
 PS2='${GREEN}>${RESET} '
+
+rvm use default 1> /dev/null 2> /dev/null # Initialize Ruby via RVM silently
