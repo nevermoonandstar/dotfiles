@@ -1,2 +1,1 @@
-echo "Login Terminal"
 . ~/.zshrc
