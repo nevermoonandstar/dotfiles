@@ -75,13 +75,14 @@ alias -g lu='ls -tur'        # Sort by access time, recent last
 #tmux
 alias -g tmux="tmux -2" # 256 color mode by default
 #Lazy!
-alias -g c='cd'       # 1/2 the keys!
-alias -g e='emacs'    # Talk about lazy! [e]macs!
-alias -g vi='vim'     # vim always.
-alias -g v='vim'      # Dial v for Vim!
-alias -g s='source'   # Or s for a new bash config.
-alias -g py='python3' # Python!
-alias -g py2='python' # Or 2.7.x, if you _have_ to.
+alias -g c='cd'                   # 1/2 the keys!
+alias -g e='emacs'                # Talk about lazy! [e]macs!
+alias -g vi='vim'                 # vim always.
+alias -g v='vim'                  # Dial v for Vim!
+alias -g s='source'               # Or s for a new bash config.
+alias -g py='python3'             # Python!
+alias -g py2='python'             # Or 2.7.x, if you _have_ to.
+alias -g mysql='mysql -u root -p' # Quickly jump to mysql console
 
 #Vimlikes
 alias -g :q='exit'
