@@ -90,6 +90,12 @@ stats ()
     acpi
 }
 
+### Fix pip in case of Assertion errors
+fixpip ()
+{
+    easy_install pip && pip install -U distribute
+}
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
