@@ -47,44 +47,44 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 #../.../..../.....
 #..[1-5]
-alias ..='cd ..'
-alias ..1='cd ..'
-alias ...='cd ../..'
-alias ..2='cd ../..'
-alias ....='cd ../../..'
-alias ..3='cd ../../..'
-alias .....='cd ../../../..'
-alias ..4='cd ../../../..'
-alias ......='cd ../../../../..'
-alias ..5='cd ../../../../..'
+alias -g ..='cd ..'
+alias -g ..1='cd ..'
+alias -g ...='cd ../..'
+alias -g ..2='cd ../..'
+alias -g ....='cd ../../..'
+alias -g ..3='cd ../../..'
+alias -g .....='cd ../../../..'
+alias -g ..4='cd ../../../..'
+alias -g ......='cd ../../../../..'
+alias -g ..5='cd ../../../../..'
 
 #ls
-alias ls='ls -lh --color' # Human sizes and color in list form
-alias lsa='ls -lha --color'
-alias lx='ls -XB'         # Sort by extension
-alias lxa='lsa -XB'
-alias lk='ls -Sr'         # Sort by size, biggest last
-alias lka='lsa -Sr'
-alias lt='ls -tr'         # Sort by date, recent last
-alias lta='lsa -tr'
-alias lc='ls -tcr'        # Sort by modified time, recent last
-alias lca='lsa -tcr'
-alias lu='ls -tur'        # Sort by access time, recent last
+alias -g ls='ls -lh --color' # Human sizes and color in list form
+alias -g lsa='ls -lha --color'
+alias -g lx='ls -XB'         # Sort by extension
+alias -g lxa='lsa -XB'
+alias -g lk='ls -Sr'         # Sort by size, biggest last
+alias -g lka='lsa -Sr'
+alias -g lt='ls -tr'         # Sort by date, recent last
+alias -g lta='lsa -tr'
+alias -g lc='ls -tcr'        # Sort by modified time, recent last
+alias -g lca='lsa -tcr'
+alias -g lu='ls -tur'        # Sort by access time, recent last
 # opted not to create a 'lua' because of lua being a programming language.
 
 #tmux
-alias tmux="tmux -2" # 256 color mode by default
+alias -g tmux="tmux -2" # 256 color mode by default
 #Lazy!
-alias c='cd'       # 1/2 the keys!
-alias e='emacs'    # Talk about lazy! [e]macs!
-alias vi='vim'     # vim always.
-alias v='vim'      # Dial v for Vim!
-alias s='source'   # Or s for a new bash config.
-alias py='python3' # Python!
-alias py2='python' # Or 2.7.x, if you _have_ to.
+alias -g c='cd'       # 1/2 the keys!
+alias -g e='emacs'    # Talk about lazy! [e]macs!
+alias -g vi='vim'     # vim always.
+alias -g v='vim'      # Dial v for Vim!
+alias -g s='source'   # Or s for a new bash config.
+alias -g py='python3' # Python!
+alias -g py2='python' # Or 2.7.x, if you _have_ to.
 
 #Vimlikes
-alias :q='exit'
+alias -g :q='exit'
 
 ### Fancy Text Functions
 BOLD=%{$(tput bold)%}
