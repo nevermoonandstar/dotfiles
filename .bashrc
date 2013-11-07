@@ -117,6 +117,9 @@ alias ..4='cd ../../../..'
 alias ......='cd ../../../../..'
 alias ..5='cd ../../../../..'
 
+#grep
+alias grep='grep --color=always' # color by default
+
 #ls
 alias ls='ls -lh --color' # Human sizes and color in list form
 alias lsa='ls -lha --color'
