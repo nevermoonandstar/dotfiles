@@ -131,6 +131,9 @@ alias lca='lsa -tcr'
 alias lu='ls -tur'        # Sort by access time, recent last
 # opted not to create a 'lua' because of lua being a programming language.
 
+#tmux
+alias tmux='tmux -2'  # 256 color mode by default
+
 #Lazy!
 alias c='cd'                   # 1/2 the keys!
 alias e='emacs'                # Talk about lazy! [e]macs!

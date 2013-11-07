@@ -83,6 +83,7 @@ alias -g lu='ls -tur'        # Sort by access time, recent last
 
 #tmux
 alias -g tmux="tmux -2" # 256 color mode by default
+
 #Lazy!
 alias -g c='cd'                   # 1/2 the keys!
 alias -g e='emacs'                # Talk about lazy! [e]macs!
