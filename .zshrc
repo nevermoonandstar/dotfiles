@@ -67,6 +67,9 @@ alias -g ..4='cd ../../../..'
 alias -g ......='cd ../../../../..'
 alias -g ..5='cd ../../../../..'
 
+#dict
+alias -g dict='dict -d wn' # Search just WordNet by default
+
 #grep
 alias -g cgrep='grep --color=always' # [c]olor [grep]
 
