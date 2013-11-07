@@ -2,6 +2,9 @@
 export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
 
+### Python Startup File
+export PYTHONSTARTUP=/home/hoppe/.pythonrc.py
+
 ### Extract function
 extract ()
 {

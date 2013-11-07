@@ -4,6 +4,9 @@
 ### 256 Color Mode
 export TERM=xterm-256color
 
+### Python Startup File
+export PYTHONSTARTUP=/home/hoppe/.pythonrc.py
+
 ### If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
