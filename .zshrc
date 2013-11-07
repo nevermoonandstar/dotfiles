@@ -80,6 +80,9 @@ alias -g lc='ls -tcr'        # Sort by modified time, recent last
 alias -g lca='lsa -tcr'
 alias -g lu='ls -tur'        # Sort by access time, recent last
 # opted not to create a 'lua' because of lua being a programming language.
+# ltree: Show directory structure in a tree format
+# source: http://www.commandlinefu.com/commands/view/710/graphical-tree-of-sub-directories
+alias -g ltree="\ls -R | grep ':$' | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
 
 #tmux
 alias -g tmux="tmux -2" # 256 color mode by default
