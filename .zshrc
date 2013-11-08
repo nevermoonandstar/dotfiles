@@ -28,6 +28,20 @@ extract ()
     fi
 }
 
+### C* compile function
+ccc ()
+{
+    if [ -f $1 ] ; then
+        case $1 in
+            *.c)   gcc $1 -o $2 ;;
+            *.cpp) g++ $1 -o $2 ;;
+            *) echo "'$1' can't be compiled via ccc()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
 ### Convert all files in directory to Unix EOL's
 # Requires dos2unix package
 eol_dir ()
@@ -72,6 +86,9 @@ alias -g dict='dict -d wn' # Search just WordNet by default
 
 #grep
 alias -g cgrep='grep --color=always' # [c]olor [grep]
+
+#gcc/g++
+alias -g gpp='g++' # I don't need a shift key!
 
 #ls
 alias -g ls='ls -lh --color' # Human sizes and color in list form
