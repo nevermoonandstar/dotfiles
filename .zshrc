@@ -50,6 +50,12 @@ eol_dir ()
     find . -type f -print0 | xargs -0 mac2unix -q -F
 }
 
+### List my IP addresses
+myips ()
+{
+    ifconfig | grep '.' | grep 'inet addr:' | sed 's/^ *//g' | cut -d ' ' -f 2 | sed 's/addr://g' | paste -sd ' ' | sed 's/ / | /g'
+}
+
 ### Dump stats
 stats ()
 {
