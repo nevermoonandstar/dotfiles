@@ -2,7 +2,8 @@ set nocompatible
 filetype plugin on
 filetype indent on
 syntax on
-colorscheme calmar256-dark
+let g:solarized_termcolors=256
+colorscheme solarized
 set background=dark
 set t_Co=256
 
