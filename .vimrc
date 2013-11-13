@@ -3,8 +3,8 @@ filetype plugin on
 filetype indent on
 syntax on
 let g:solarized_termcolors=256
-colorscheme solarized
 set background=dark
+colorscheme solarized
 set t_Co=256
 
 set guifont=monoOne\ 14
