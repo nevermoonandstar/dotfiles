@@ -107,8 +107,15 @@ set printoptions+=syntax:n   " do not print syntax coloration
 " set this stuff in ~/.vim/ftplugin/ruby.vim as well.
 autocmd Filetype ruby setlocal sts=2 ts=2 sw=2 expandtab
 
-map <F2> :set background=light <cr> " F2: use light background
-map <F3> :set background=dark <cr> " F3: use dark background
-map <F4> :set colorcolumn=+1 <cr> " F4: turn on visible last column
-map <F5> :set colorcolumn="" <cr> " F5: turn off visible last column
-map <F12> :redraw! <cr> " F12: redraw screen
+inoremap <S-Tab> <C-V><Tab>
+    " Shift-Tab: Hard Tab
+map <F2> :set background=light <cr>
+    " F2: use light background
+map <F3> :set background=dark <cr>
+    " F3: use dark background
+map <F4> :set colorcolumn=+1 <cr>
+    " F4: turn on visible last column
+map <F5> :set colorcolumn="" <cr>
+    " F5: turn off visible last column
+map <F12> :redraw! <cr>
+    " F12: redraw screen
