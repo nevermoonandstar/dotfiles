@@ -7,7 +7,7 @@ set background=dark
 colorscheme solarized
 set t_Co=256
 
-set guifont=monoOne\ 14
+set guifont=monoOne\ 9
 set guioptions-=m " remove menu bar
 set guioptions-=T " remove toolbar
 set guioptions-=r " remove right scrollbar

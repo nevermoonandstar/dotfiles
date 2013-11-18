@@ -64,7 +64,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "monoOne" :foundry "unknown" :slant normal :weight normal :height 143 :width normal)))))
+ '(default ((t (:family "monoOne" :foundry "unknown" :slant normal :weight normal :height 90 :width normal)))))
 
 ;(when (>= emacs-major-version 24)
 ;  (require 'package)
