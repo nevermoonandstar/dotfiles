@@ -57,7 +57,7 @@
 (setq frame-title-format "Etherium") ;Set window title to this.
 (global-hi-lock-mode 1) ;highlight mode everywhere
 (menu-bar-mode 0) ;no menu bar
-(evil-mode 1) ;vim keys, requires evil package from MELPA
+;(evil-mode 1) ;vim keys, requires evil package from MELPA
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -104,7 +104,7 @@
 (global-set-key [f11] (lambda () (interactive) (menu-bar-mode 0)))
 (global-set-key [f12] (lambda () (interactive) (menu-bar-mode 1)))
 
-(load-theme 'underwater t)
-(add-to-list 'load-path "~/.emacs.d/vendor/powerline")
-(require 'powerline)
-(powerline-default-theme)
+(load-theme 'solarized-dark t)
+;(add-to-list 'load-path "~/.emacs.d/vendor/powerline")
+;(require 'powerline)
+;(powerline-default-theme)
