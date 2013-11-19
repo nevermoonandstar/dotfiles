@@ -168,7 +168,7 @@ alias tmux='tmux -2'  # 256 color mode by default
 
 #Lazy!
 alias c='cd'                   # 1/2 the keys!
-alias e='emacs'                # Talk about lazy! [e]macs!
+alias e='emacs -nw'            # Talk about lazy! [e]macs!
 alias vi='vim'                 # vim always.
 alias v='vim'                  # Dial v for Vim!
 alias s='source'               # Or s for a new bash config.
