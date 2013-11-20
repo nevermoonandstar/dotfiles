@@ -66,11 +66,6 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "monoOne" :foundry "unknown" :slant normal :weight normal :height 90 :width normal)))))
 
-;(when (>= emacs-major-version 24)
-;  (require 'package)
-;  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-;  )
-
 ;; Pear coding standards : http://pear.php.net/manual/en/standards.indenting.php
 (defun pear/php-mode-init () 
 ;  "Set some buffer-local variables."
@@ -97,6 +92,7 @@
 
 (add-hook 'html-mode-hook 'web-mode) ;use web-mode package on html files
 
+(global-set-key (kbd "C-c C-l") 'goto-line)
 (global-set-key [f5] 'whitesmith-mode)
 (global-set-key (kbd "C-M-/") 'hippie-expand)
 (global-set-key (kbd "M-/") 'auto-complete)
@@ -105,6 +101,3 @@
 (global-set-key [f12] (lambda () (interactive) (menu-bar-mode 1)))
 
 (load-theme 'solarized-dark t)
-;(add-to-list 'load-path "~/.emacs.d/vendor/powerline")
-;(require 'powerline)
-;(powerline-default-theme)
