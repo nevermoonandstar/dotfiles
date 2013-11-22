@@ -78,6 +78,7 @@ set preserveindent " preserve indents
 set showmatch " highlight matches while searching
 set incsearch " highlight matches while typing for searches
 set nowrap " no line wrapping
+set showcmd " show last command
 
 set list                     " list invisible characters,
 set listchars=tab:>·,trail:· " but only tabs and trailing spaces
@@ -107,6 +108,8 @@ set printoptions+=syntax:n   " do not print syntax coloration
 " set this stuff in ~/.vim/ftplugin/ruby.vim as well.
 autocmd Filetype ruby setlocal sts=2 ts=2 sw=2 expandtab
 
+let mapleader=" " " <Leader> = <Space>
+
 inoremap <S-Tab> <C-V><Tab>
     " Shift-Tab: Hard Tab
 map <F2> :set background=light <cr>
@@ -119,3 +122,4 @@ map <F5> :set colorcolumn="" <cr>
     " F5: turn off visible last column
 map <F12> :redraw! <cr>
     " F12: redraw screen
+map <Leader>r :redraw! <cr>
