@@ -8,6 +8,7 @@
  '(c-set-offset (quote defun-close) t)
  '(column-number-mode t)
  '(compilation-message-face (quote default))
+ '(enh-ruby-extra-keywords (quote ("public" "private")))
  '(fci-rule-color "#282a2e")
  '(global-font-lock-mode 1)
  '(global-linum-mode 1)
@@ -64,7 +65,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "monoOne" :foundry "unknown" :slant normal :weight normal :height 90 :width normal)))))
+ '(default ((t (:family "monoOne" :foundry "unknown" :slant normal :weight normal :height 90 :width normal))))
+ '(enh-ruby-op-face ((t (:foreground "color-34"))))
+ '(enh-ruby-regexp-delimiter-face ((t (:foreground "color-160"))))
+ '(enh-ruby-string-delimiter-face ((t (:foreground "color-34")))))
 
 ;; Pear coding standards : http://pear.php.net/manual/en/standards.indenting.php
 (defun pear/php-mode-init () 
@@ -89,6 +93,8 @@
   (c-set-offset 'brace-list-close 0)
   (c-set-offset 'defun-close 0)
 )
+
+(local-set-key [tab] 'tab-to-tab-stop)
 
 (add-hook 'html-mode-hook 'web-mode) ;use web-mode package on html files
 
