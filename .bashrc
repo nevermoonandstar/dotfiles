@@ -174,6 +174,7 @@ alias v='vim'                  # Dial v for Vim!
 alias s='source'               # Or s for a new bash config.
 alias py='python3'             # Python!
 alias py2='python'             # Or 2.7.x, if you _have_ to.
+alias ipy='ipython'            # IPython
 alias mysql='mysql -u root -p' # Quickly jump to mysql console
 
 #Vimlikes
