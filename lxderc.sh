@@ -5,4 +5,6 @@
 setxkbmap -option ctrl:nocaps #Caps = Control
 synclient MaxTapTime=0 #Disable Tap To Click
 
-gnome-terminal --window --full-screen #Terminal Scree @ Start
+dropbox start #Start Dropbox
+
+gnome-terminal --window --full-screen #Terminal Screen @ Start
