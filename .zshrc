@@ -142,14 +142,15 @@ WHITE=%{$(tput setaf 255)%}
 RESET=%{$(tput sgr 0)%}
 
 ### Needed for vcprompt (~/bin/vcprompt)
+### and Pyhoc (~/bin/pyhoc)
 setopt prompt_subst
 
 ### The Prompts
-# {gr}      {red}        {gr}{normal}        {yl}
-# user@host ~/path/to/dir $ \                version:control
+# {gr}        {red}          {gr}{normal}        {yl}
+# [user@host] [~/path/to/dir] $ \                [version:control]
 # > {gr}
-PS1='${BOLD}${GREEN}$(pyhoc "%l")${RED}$(pyhoc "%d")${BOLD}${GREEN}%#${RESET} '
-RPROMPT='${YELLOW}${BOLD}$(vcprompt -f "%s:%b%m%u%a")${RESET}'
+PS1='${BOLD}${GREEN}$(pyhoc "%bl")${RED}$(pyhoc "%bd")${BOLD}${GREEN}%#${RESET} '
+RPROMPT='${YELLOW}${BOLD}$(vcprompt -f "[%s:%b%m%u%a]")${RESET}'
 PS2='${GREEN}>${RESET} '
 
 rvm use default 1> /dev/null 2> /dev/null # Initialize Ruby via RVM silently
