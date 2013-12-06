@@ -145,17 +145,11 @@ RESET=%{$(tput sgr 0)%}
 setopt prompt_subst
 
 ### The Prompts
-#  {green}     {red}           {yellow}
-# [user@host] [~/path/to/dir] [vc:branch] {bold}
-# $ \  {green}
-# >    {green}
-#PS1='${BOLD}${GREEN}[%n@%m] ${RED}[%~] ${YELLOW}$(vcprompt -f "[%s:%b%m%u%a]")${RESET}${GREEN}
-#%#${RESET} '
-
-# {gr}      {red}         {yl}                   {gr}
-# user@host ~/path/to/dir version:control {bold} $
+# {gr}      {red}        {gr}{normal}        {yl}
+# user@host ~/path/to/dir $ \                version:control
 # > {gr}
-PS1='${BOLD}${GREEN}$(pyhoc "%l")${RED}$(pyhoc "%d")${YELLOW}$(vcprompt -f "%s:%b%m%u%a ")${BOLD}${GREEN}%#${RESET} '
+PS1='${BOLD}${GREEN}$(pyhoc "%l")${RED}$(pyhoc "%d")${BOLD}${GREEN}%#${RESET} '
+RPROMPT='${YELLOW}${BOLD}$(vcprompt -f "%s:%b%m%u%a ")${RESET}'
 PS2='${GREEN}>${RESET} '
 
 rvm use default 1> /dev/null 2> /dev/null # Initialize Ruby via RVM silently
