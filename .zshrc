@@ -5,6 +5,9 @@ export TERM=xterm-256color
 ### Python Startup File
 export PYTHONSTARTUP=/home/hoppe/.pythonrc.py
 
+### Clear my magic prompt state logs
+rm -rf ~/.pyhoc/.*
+
 ### Extract function
 extract ()
 {
@@ -149,8 +152,13 @@ setopt prompt_subst
 # [user@host] [~/path/to/dir] [vc:branch] {bold}
 # $ \  {green}
 # >    {green}
-PS1='${BOLD}${GREEN}[%n@%m] ${RED}[%~] ${YELLOW}$(vcprompt -f "[%s:%b%m%u%a]")${RESET}${GREEN}
-%#${RESET} '
+#PS1='${BOLD}${GREEN}[%n@%m] ${RED}[%~] ${YELLOW}$(vcprompt -f "[%s:%b%m%u%a]")${RESET}${GREEN}
+#%#${RESET} '
+
+# {gr}      {red}         {yl}                   {gr}
+# user@host ~/path/to/dir version:control {bold} $
+# > {gr}
+PS1='${BOLD}${GREEN}$(pyhoc "%l")${RED}$(pyhoc "%d")${YELLOW}$(vcprompt -f "%s:%b%m%u%a ")${BOLD}${GREEN}%#${RESET} '
 PS2='${GREEN}>${RESET} '
 
 rvm use default 1> /dev/null 2> /dev/null # Initialize Ruby via RVM silently
