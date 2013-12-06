@@ -5,6 +5,9 @@ export TERM=xterm-256color
 ### Python Startup File
 export PYTHONSTARTUP=/home/hoppe/.pythonrc.py
 
+### Clear pythoc folder
+find ~/.pyhoc -type f -name ".*" -delete
+
 ### Extract function
 extract ()
 {
