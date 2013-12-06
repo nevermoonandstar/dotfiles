@@ -7,6 +7,9 @@ export TERM=xterm-256color
 ### Python Startup File
 export PYTHONSTARTUP=/home/hoppe/.pythonrc.py
 
+### Clear pyhoc folder
+find ~/.pyhoc -type f -name ".*" -delete
+
 ### If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -196,7 +199,7 @@ RESET=$(tput sgr 0)
 # [user@host] [~/path/to/dir] [vc:branch] {bold}
 # $ \  {green}
 # >    {green}
-PS1='\[$BOLD\]\[$GREEN\][\u@\h] \[$RED\][\w] \[$YELLOW\]$(vcprompt -f '[%s:%b%m%u%a]')\n\[$RESET\]\[$GREEN\]\$\[$RESET\] '
+PS1='$BOLD$GREEN$(pyhoc "%bl")$RED$(pyhoc "%bd")$(vcprompt -f "[%s:%b%m%u%a] ")$RESET$GREEN\$ $RESET'
 PS2='\[$GREEN\]>\[$RESET\] '
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
