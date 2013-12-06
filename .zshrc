@@ -5,9 +5,6 @@ export TERM=xterm-256color
 ### Python Startup File
 export PYTHONSTARTUP=/home/hoppe/.pythonrc.py
 
-### Clear my magic prompt state logs
-rm -rf ~/.pyhoc/.*
-
 ### Extract function
 extract ()
 {
