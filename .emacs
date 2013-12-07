@@ -98,11 +98,14 @@
 
 (add-hook 'html-mode-hook 'web-mode) ;use web-mode package on html files
 
+(load-file "~/.emacs.d/emacs-for-python/epy-init.el")
+
 (global-set-key (kbd "C-c C-l") 'goto-line)
 (global-set-key [f5] 'whitesmith-mode)
 (global-set-key (kbd "C-M-/") 'hippie-expand)
 (global-set-key (kbd "M-/") 'auto-complete)
 (global-set-key [f10] (lambda () (interactive) (highlight-lines-matching-regexp ".\\{81\\}" 'hi-blue)))
+(global-set-key [f10] 'auto-complete-mode)
 (global-set-key [f11] (lambda () (interactive) (menu-bar-mode 0)))
 (global-set-key [f12] (lambda () (interactive) (menu-bar-mode 1)))
 
