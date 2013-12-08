@@ -199,7 +199,7 @@ RESET=$(tput sgr 0)
 # [user@host] [~/path/to/dir] [vc:branch] {bold}
 # $ \  {green}
 # >    {green}
-PS1='$BOLD$GREEN$(pyhoc "%bl")$RED$(pyhoc "%bd")$(vcprompt -f "[%n:%b] ")$RESET$GREEN\$ $RESET'
+PS1='$BOLD$GREEN$(pyhoc "%bl" $RED "%bd")$(vcprompt -f "[%n:%b] ")$RESET$GREEN\$$RESET '
 PS2='\[$GREEN\]>\[$RESET\] '
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

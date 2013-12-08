@@ -152,7 +152,7 @@ setopt prompt_subst
 # {gr}        {red}          {gr}{normal}        {yl}
 # [user@host] [~/path/to/dir] $ \                [version:control]
 # > {gr}
-PS1='${BOLD}${GREEN}$(pyhoc "%bl")${RED}$(pyhoc "%bd")${BOLD}${GREEN}%#${RESET} '
+PS1='${BOLD}${GREEN}$(pyhoc "%bl" ${RED} "%bd")${GREEN}%#${RESET} '
 RPROMPT='${YELLOW}${BOLD}$(vcprompt -f "[%n:%b]")${RESET}'
 PS2='${GREEN}>${RESET} '
 
