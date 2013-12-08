@@ -23,6 +23,10 @@ au FocusGained * redraw! " redraw screen on focus
 set splitright " split opens on right by default
 set splitbelow " vsplit opens below by default
 set scrolloff=4 " scroll up and down when less than x away from edge
+set textwidth=0
+set formatoptions-=t
+set wrap
+set wrapmargin=0 " no wrapping!
 
 " normal text background = none
 " hi Normal ctermbg=NONE <--Testing off
@@ -77,7 +81,6 @@ set copyindent " copy and paste indents with text
 set preserveindent " preserve indents
 set showmatch " highlight matches while searching
 set incsearch " highlight matches while typing for searches
-set nowrap " no line wrapping
 set showcmd " show last command
 
 set list                     " list invisible characters,
