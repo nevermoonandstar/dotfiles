@@ -147,7 +147,7 @@ alias dict='dict -d wn' # Search just WordNet by default
 alias cgrep='grep --color=always' # [c]olor [grep]
 
 #gcc/g++
-alias -g gpp='g++' # I don't need a shift key!
+alias gpp='g++' # I don't need a shift key!
 
 #ls
 alias ls='ls -lh --color' # Human sizes and color in list form
@@ -195,11 +195,10 @@ WHITE=$(tput setaf 255)
 RESET=$(tput sgr 0)
 
 ### The Prompts
-#  {green}     {red}           {yellow}
-# [user@host] [~/path/to/dir] [vc:branch] {bold}
-# $ \  {green}
-# >    {green}
-PS1='$BOLD$GREEN$(pyhoc "%bl" $RED "%bd")$(vcprompt -f "[%n:%b] ")$RESET$GREEN\$$RESET '
+#  {green}     {red}           {yellow}         {green}
+# [user@host] [~/path/to/dir] [vc:branch] {bold}$ \
+# > {green}
+PS1='\[$BOLD\]\[$GREEN\]$(pyhoc "%bl" \[$RED\] "%bd")\[$YELLOW\]$(vcprompt -f "[%n:%b] ")\[$RESET\]\[$GREEN\]\$ \[$RESET\]'
 PS2='\[$GREEN\]>\[$RESET\] '
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
