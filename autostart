@@ -1,0 +1,3 @@
+/home/hoppe/lxderc.sh
+setxkbmap -option ctrl:nocaps
+synclient MaxTapTime=0
