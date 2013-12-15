@@ -37,7 +37,8 @@ ccc ()
     if [ -f $1 ] ; then
         case $1 in
             *.c)   gcc $1 -o $2 ;;
-            *.cpp) g++ $1 -o $2 ;;
+            *.cpp) g++ $1 -std=c++11 -o $2 ;;
+            *.d)   dmd $1 -of $2 ;;
             *) echo "'$1' can't be compiled via ccc()" ;;
         esac
     else

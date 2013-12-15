@@ -100,6 +100,9 @@
 
 (load-file "~/.emacs.d/emacs-for-python/epy-init.el")
 
+(setq-default c-default-style "bsd"
+			  c-basic-offset 4) 
+
 (global-set-key (kbd "C-c C-l") 'goto-line)
 (global-set-key [f5] 'whitesmith-mode)
 (global-set-key (kbd "C-M-/") 'hippie-expand)
