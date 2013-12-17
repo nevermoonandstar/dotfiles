@@ -134,6 +134,9 @@ alias -g mysql='mysql -u root -p' # Quickly jump to mysql console
 #Vimlikes
 alias -g :q='exit'
 
+#Other
+alias -g dis='2> /dev/null &!' #Disown and don't give me any problems
+
 ### Fancy Text Functions
 BOLD=%{$(tput bold)%}
 RED=%{$(tput setaf 196)%}
