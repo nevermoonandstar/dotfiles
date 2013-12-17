@@ -102,6 +102,7 @@
 
 (setq-default c-default-style "bsd"
 			  c-basic-offset 4) 
+(electric-indent-mode t)
 
 (global-set-key (kbd "C-c C-l") 'goto-line)
 (global-set-key [f5] 'whitesmith-mode)
