@@ -55,10 +55,9 @@
 
 (if window-system ;84x25 window please, but may have to start emacs with arg:
       (set-frame-size (selected-frame) 84 25)) ;-geometry 84x25
-(setq frame-title-format "Etherium") ;Set window title to this.
+(setq frame-title-format '(buffer-file-name "%f")) ;Set window title to this.
 (global-hi-lock-mode 1) ;highlight mode everywhere
 (menu-bar-mode 0) ;no menu bar
-;(evil-mode 1) ;vim keys, requires evil package from MELPA
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -96,6 +95,7 @@
 
 (defun zsh () (interactive) (ansi-term "/bin/zsh"))
 (defun bash () (interactive) (ansi-term "/bin/bash"))
+(defun path () (interactive) (message (buffer-file-name)))
 
 (local-set-key [tab] 'tab-to-tab-stop)
 
@@ -106,6 +106,7 @@
 (setq-default c-default-style "bsd"
 			  c-basic-offset 4) 
 (electric-indent-mode t)
+(electric-pair-mode t)
 
 (global-set-key (kbd "C-c C-l") 'goto-line)
 (global-set-key [f5] 'whitesmith-mode)
