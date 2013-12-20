@@ -127,7 +127,7 @@ alias -g e='emacs -nw'            # Talk about lazy! [e]macs!
 alias -g vi='vim'                 # vim always.
 alias -g v='vim'                  # Dial v for Vim!
 alias -g s='source'               # Or s for a new bash config.
-alias -g py='python3'             # Python!
+alias -g py='python3.3.3'         # Python! A symlink in ~/bin
 alias -g py2='python'             # Or 2.7.x, if you _have_ to.
 alias -g ipy='ipython'            # IPython
 alias -g mysql='mysql -u root -p' # Quickly jump to mysql console
@@ -136,7 +136,7 @@ alias -g mysql='mysql -u root -p' # Quickly jump to mysql console
 alias -g :q='exit'
 
 #Other
-alias -g dis='2> /dev/null &!' #Disown and don't give me any problems
+alias -g dis='1>/dev/null 2>/dev/null &!' #Disown and don't give me any problems
 
 ### Fancy Text Functions
 BOLD=%{$(tput bold)%}

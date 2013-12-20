@@ -40,6 +40,7 @@
 
 (require 'package)
 (require 'cl) ;; Required for milkypostman's powerline
+(require 'uniquify)
 (package-initialize)
 (setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
                           ("gnu" . "http://elpa.gnu.org/packages/")
