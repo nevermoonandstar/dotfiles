@@ -3,5 +3,5 @@
 # /home/{user}/lxderc.sh
 
 dropbox start #Start Dropbox
-
 gnome-terminal --window --full-screen #Terminal Screen @ Start
+xfce4-power-manager #Start power daemon, since Lubuntu doesn't
