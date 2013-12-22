@@ -20,6 +20,8 @@
  '(markdown-command "~/Markdown_1.0.1/markdown.pl")
  '(markdown-command-needs-filename t)
  '(markdown-enable-math t)
+ '(org-agenda-files (quote ("~/Dropbox/org_files" "~/Dropbox/org" "~/org_files" "~/org")))
+ '(org-support-shift-select t)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(syslog-debug-face (quote ((t :background unspecified :foreground "#2aa198" :weight bold))))
@@ -66,9 +68,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "monoOne" :foundry "unknown" :slant normal :weight normal :height 90 :width normal))))
- '(enh-ruby-op-face ((t (:foreground "color-34"))))
- '(enh-ruby-regexp-delimiter-face ((t (:foreground "color-160"))))
- '(enh-ruby-string-delimiter-face ((t (:foreground "color-34")))))
+ '(enh-ruby-op-face ((t (:foreground "color-34"))) t)
+ '(enh-ruby-regexp-delimiter-face ((t (:foreground "color-160"))) t)
+ '(enh-ruby-string-delimiter-face ((t (:foreground "color-34"))) t))
 
 ;; Pear coding standards : http://pear.php.net/manual/en/standards.indenting.php
 (defun pear/php-mode-init () 
@@ -86,6 +88,11 @@
   (c-set-offset 'defun-close 0))     ;So this is to put them in line during electrics.
 (add-hook 'php-mode-hook 'pear/php-mode-init) ;correct php indents
 
+(add-hook 'org-mode-hook
+  (lambda ()
+    (set (make-local-variable 'electric-indent-functions)
+      (list (lambda (arg) 'no-indent)))))
+
 (defun whitesmith-mode ()
   "Switch to Whitesmith Indent Mode without the overextended close braces."
   (interactive)
@@ -101,6 +108,11 @@
 (local-set-key [tab] 'tab-to-tab-stop)
 
 (add-hook 'html-mode-hook 'web-mode) ;use web-mode package on html files
+
+(setq org-log-done 'time)
+(setq org-log-done 'note)
+(define-key global-map "\C-ca" 'org-agenda)
+(load-library "find-lisp")
 
 (load-file "~/.emacs.d/emacs-for-python/epy-init.el")
 
@@ -119,3 +131,5 @@
 (global-set-key [f12] (lambda () (interactive) (menu-bar-mode 1)))
 
 (load-theme 'solarized-dark t)
+
+
