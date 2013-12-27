@@ -115,6 +115,7 @@
 (load-library "find-lisp")
 
 (load-file "~/.emacs.d/emacs-for-python/epy-init.el")
+(add-to-list 'load-path "~/.emacs.d/ess/lisp") (load "ess-site")
 
 (setq-default c-default-style "bsd"
 			  c-basic-offset 4) 
