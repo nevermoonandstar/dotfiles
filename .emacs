@@ -116,6 +116,7 @@
 
 (load-file "~/.emacs.d/emacs-for-python/epy-init.el")
 (add-to-list 'load-path "~/.emacs.d/ess/lisp") (load "ess-site")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 (setq-default c-default-style "bsd"
 			  c-basic-offset 4) 
@@ -132,5 +133,3 @@
 (global-set-key [f12] (lambda () (interactive) (menu-bar-mode 1)))
 
 (load-theme 'solarized-dark t)
-
-
