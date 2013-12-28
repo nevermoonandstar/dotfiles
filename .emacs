@@ -70,7 +70,8 @@
  '(default ((t (:family "monoOne" :foundry "unknown" :slant normal :weight normal :height 90 :width normal))))
  '(enh-ruby-op-face ((t (:foreground "color-34"))) t)
  '(enh-ruby-regexp-delimiter-face ((t (:foreground "color-160"))) t)
- '(enh-ruby-string-delimiter-face ((t (:foreground "color-34"))) t))
+ '(enh-ruby-string-delimiter-face ((t (:foreground "color-34"))) t)
+ '(fringe ((t (:background "blue4")))))
 
 ;; Pear coding standards : http://pear.php.net/manual/en/standards.indenting.php
 (defun pear/php-mode-init () 
@@ -132,4 +133,4 @@
 (global-set-key [f11] (lambda () (interactive) (menu-bar-mode 0)))
 (global-set-key [f12] (lambda () (interactive) (menu-bar-mode 1)))
 
-(load-theme 'solarized-dark t)
+(load-theme 'word-perfect t)
