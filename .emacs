@@ -67,7 +67,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "monoOne" :foundry "unknown" :slant normal :weight normal :height 90 :width normal))))
+ '(default ((t (:family "monoOne" :foundry "unknown" :slant normal :weight normal :height 128 :width normal))))
  '(enh-ruby-op-face ((t (:foreground "color-34"))) t)
  '(enh-ruby-regexp-delimiter-face ((t (:foreground "color-160"))) t)
  '(enh-ruby-string-delimiter-face ((t (:foreground "color-34"))) t)
@@ -128,9 +128,9 @@
 (global-set-key [f5] 'whitesmith-mode)
 (global-set-key (kbd "C-M-/") 'hippie-expand)
 (global-set-key (kbd "M-/") 'auto-complete)
-(global-set-key [f9] (lambda () (interactive) (highlight-lines-matching-regexp ".\\{81\\}" 'hi-blue)))
-(global-set-key [f10] 'auto-complete-mode)
-(global-set-key [f11] (lambda () (interactive) (menu-bar-mode 0)))
+(global-set-key [f8] (lambda () (interactive) (highlight-lines-matching-regexp ".\\{81\\}" 'hi-blue)))
+(global-set-key [f9] 'auto-complete-mode)
+(global-set-key [f10] (lambda () (interactive) (menu-bar-mode 0)))
 (global-set-key [f12] (lambda () (interactive) (menu-bar-mode 1)))
 
 (load-theme 'word-perfect t)

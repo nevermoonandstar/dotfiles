@@ -7,7 +7,7 @@ set background=dark
 colorscheme ibmedit
 set t_Co=256
 
-set guifont=monoOne\ 9
+set guifont=monoOne\ 13
 set guioptions-=m " remove menu bar
 set guioptions-=T " remove toolbar
 set guioptions-=r " remove right scrollbar
