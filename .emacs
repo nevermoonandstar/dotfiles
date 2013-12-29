@@ -81,8 +81,9 @@
          "#d33682" "#00736F" "#2aa198" "#839496"
          "#657b83"))))
 
+;;; Variables and dependencies
+
 (require 'package)
-(require 'cl) ;; Required for milkypostman's powerline
 (require 'uniquify)
 (package-initialize)
 (setq package-archives
@@ -91,18 +92,9 @@
      ("marmalade" . "http://marmalade-repo.org/packages/")
      ("melpa" . "http://melpa.milkbox.net/packages/")
      ))
-(setq-default indent-tabs-mode nil) ;tabs are spaces
-(setq-default tab-width 4) ;tabs are 4 wide
-(setq backup-inhibited t) ;no #files# everywhere
-(setq auto-save-default nil) ;no ~files everywhere
-(setq make-backup-files nil) ;and I mean it
-(setq auto-complete-mode t) ;tab auto-completes commands
-
-(if window-system ;84x25 window please, but may have to start emacs with arg:
-  (set-frame-size (selected-frame) 84 25)) ;-geometry 84x25
-(setq frame-title-format '(buffer-file-name "%f")) ;Set window title to this.
-(global-hi-lock-mode 1) ;highlight mode everywhere
-(menu-bar-mode 0) ;no menu bar
+(load-file "~/.emacs.d/emacs-for-python/epy-init.el") ;ESS $PATH
+(add-to-list 'load-path "~/.emacs.d/ess/lisp") (load "ess-site") ;load ESS
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -134,7 +126,7 @@
   (c-set-style "k&r")
   (c-set-offset 'brace-list-close 0) ;Whitesmith overindents close braces
   (c-set-offset 'defun-close 0))
-  ;So this is to put them in line during electrics.
+  ;So ^this^ is to put them in line during electrics.
 (add-hook 'php-mode-hook 'pear/php-mode-init) ;correct php indents
 
 (add-hook 'org-mode-hook
@@ -196,13 +188,6 @@
 (setq org-log-done 'time)
 (setq org-log-done 'note)
 (define-key global-map "\C-ca" 'org-agenda)
-(setq x-select-enable-clipboard t)
-
-;;; $PATH
-
-(load-file "~/.emacs.d/emacs-for-python/epy-init.el")
-(add-to-list 'load-path "~/.emacs.d/ess/lisp") (load "ess-site")
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 ;;; void style_n_behavior(defaults)
 ;;; {
@@ -210,6 +195,18 @@
   c-basic-offset 4) 
 (electric-indent-mode t)
 (electric-pair-mode t)
+(setq-default indent-tabs-mode nil) ;tabs are spaces
+(setq-default tab-width 4) ;tabs are 4 wide
+(setq backup-inhibited t) ;no #files# everywhere
+(setq auto-save-default nil) ;no ~files everywhere
+(setq make-backup-files nil) ;and I mean it
+(setq auto-complete-mode t) ;tab auto-completes commands
+(setq x-select-enable-clipboard t)
+(if window-system ;84x25 window please, but may have to start emacs with arg:
+  (set-frame-size (selected-frame) 84 25)) ;-geometry 84x25
+(setq frame-title-format '(buffer-file-name "%f")) ;Set window title to this.
+(global-hi-lock-mode 1) ;highlight mode everywhere
+(menu-bar-mode 0) ;no menu bar
 ;;; }
 
 ;;; Hotkeys and chords
