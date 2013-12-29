@@ -94,6 +94,11 @@
     (set (make-local-variable 'electric-indent-functions)
       (list (lambda (arg) 'no-indent)))))
 
+(add-hook 'python-mode-hook
+  (lambda ()
+    (set (make-local-variable 'electric-indent-functions)
+      (list (lambda (arg) 'no-indent)))))
+
 (defun whitesmith-mode ()
   "Switch to Whitesmith Indent Mode without the overextended close braces."
   (interactive)
@@ -121,7 +126,7 @@
 
 (setq-default c-default-style "bsd"
 			  c-basic-offset 4) 
-;(electric-indent-mode t)
+(electric-indent-mode t)
 (electric-pair-mode t)
 
 (global-set-key (kbd "C-c C-l") 'goto-line)
