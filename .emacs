@@ -118,7 +118,7 @@
 (setq org-log-done 'time)
 (setq org-log-done 'note)
 (define-key global-map "\C-ca" 'org-agenda)
-(load-library "find-lisp")
+(setq x-select-enable-clipboard t)
 
 (load-file "~/.emacs.d/emacs-for-python/epy-init.el")
 (add-to-list 'load-path "~/.emacs.d/ess/lisp") (load "ess-site")
