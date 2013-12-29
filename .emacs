@@ -135,7 +135,6 @@
 (global-set-key (kbd "M-/") 'auto-complete)
 (global-set-key [f8] (lambda () (interactive) (highlight-lines-matching-regexp ".\\{81\\}" 'hi-blue)))
 (global-set-key [f9] 'auto-complete-mode)
-(global-set-key [f10] (lambda () (interactive) (menu-bar-mode 0)))
-(global-set-key [f12] (lambda () (interactive) (menu-bar-mode 1)))
+(global-set-key [f12] 'menu-bar-mode)
 
 (load-theme 'word-perfect t)
