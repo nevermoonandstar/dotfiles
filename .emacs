@@ -118,6 +118,8 @@
  '(enh-ruby-string-delimiter-face ((t (:foreground "color-34"))) t)
  '(fringe ((t (:background "blue4")))))
 
+;;; Modes and hooks
+
 ;; Pear coding standards : http://pear.php.net/manual/en/standards.indenting.php
 (defun pear/php-mode-init () 
 ;  "Set some buffer-local variables."
@@ -181,36 +183,48 @@
   (c-set-offset 'brace-list-close 0)
   (c-set-offset 'defun-close 0))
 
+(add-hook 'html-mode-hook 'web-mode) ;use web-mode package on html files
+
+;;; Handy functions
+
 (defun zsh () (interactive) (ansi-term "/bin/zsh"))
 (defun bash () (interactive) (ansi-term "/bin/bash"))
 (defun path () (interactive) (message (buffer-file-name)))
 
-;(local-set-key [tab] 'tab-to-tab-stop)
-
-(add-hook 'html-mode-hook 'web-mode) ;use web-mode package on html files
+;;; Org mode shenanigans
 
 (setq org-log-done 'time)
 (setq org-log-done 'note)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq x-select-enable-clipboard t)
 
+;;; $PATH
+
 (load-file "~/.emacs.d/emacs-for-python/epy-init.el")
 (add-to-list 'load-path "~/.emacs.d/ess/lisp") (load "ess-site")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
+;;; void style_n_behavior(defaults)
+;;; {
 (setq-default c-default-style "bsd"
   c-basic-offset 4) 
 (electric-indent-mode t)
 (electric-pair-mode t)
+;;; }
+
+;;; Hotkeys and chords
 
 (global-set-key (kbd "C-c C-l") 'goto-line)
-(global-set-key [f5] 'whitesmith-mode)
 (global-set-key (kbd "C-M-/") 'hippie-expand)
 (global-set-key (kbd "M-/") 'auto-complete)
+(global-set-key [f5] 'whitesmith-mode)
 (global-set-key [f8]
   (lambda () (interactive)
     (highlight-lines-matching-regexp ".\\{81\\}" 'hi-blue)))
 (global-set-key [f9] 'auto-complete-mode)
 (global-set-key [f12] 'menu-bar-mode)
+
+;;; Theme
+;;; (So if emacs blinds you when you start up, it has a broken ~/.emacs)
 
 (load-theme 'word-perfect t)
