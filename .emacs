@@ -121,7 +121,7 @@
 
 (setq-default c-default-style "bsd"
 			  c-basic-offset 4) 
-(electric-indent-mode t)
+;(electric-indent-mode t)
 (electric-pair-mode t)
 
 (global-set-key (kbd "C-c C-l") 'goto-line)
