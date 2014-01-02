@@ -162,6 +162,16 @@
 ;; R: 2 space indent
 (add-hook 'ess-mode-hook '2_indent)
 
+;; C/C++
+(add-hook 'c-mode-hook '2_indent)
+(add-hook 'c++-mode-hook '2_indent)
+
+;; D: 2 space indent
+(load-file "~/.emacs.d/modes/d-mode.el")
+(autoload 'd-mode "d-mode" "Major mode for editing D code." t)
+(add-to-list 'auto-mode-alist '("\\.d[i]?\\'" . d-mode))
+(add-hook 'd-mode-hook '2_indent)
+
 ;; Lisps: No electric indents, 2 space indent
 (add-hook 'lisp-mode 'no_indents)
 (add-hook 'lisp-mode 'lisp_width)
