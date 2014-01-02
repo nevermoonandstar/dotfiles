@@ -148,6 +148,7 @@
 (defun lisp_width () setq-local 'tab-width 2)
 (defun lisp_offsets () set (make-local-variable 'lisp-indent-offset) 2
   set (make-local-variable 'lisp-indent-function) 2)
+(defun 2_indent () setq-local default-tab-width 2)
 
 ;; PHP: Pear standards
 (add-hook 'php-mode-hook 'pear/php-mode-init)
@@ -157,6 +158,9 @@
 
 ;; Python: No electric indents
 (add-hook 'python-mode-hook 'no_indents)
+
+;; R: 2 space indent
+(add-hook 'ess-mode-hook '2_indent)
 
 ;; Lisps: No electric indents, 2 space indent
 (add-hook 'lisp-mode 'no_indents)
