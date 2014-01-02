@@ -97,21 +97,23 @@
 ;;; void style_n_behavior(defaults)
 ;;; {
 (setq-default c-default-style "bsd"
-  c-basic-offset 4) 
-(electric-indent-mode t)
-(electric-pair-mode t)
+  c-basic-offset 2) ;2 space, braces on own line one below code
+(electric-indent-mode t) ;auto-depth-indent
+(electric-pair-mode t) ;auto-close parens and braces
 (setq-default indent-tabs-mode nil) ;tabs are spaces
 (setq-default tab-width 4) ;tabs are 4 wide
 (setq backup-inhibited t) ;no #files# everywhere
 (setq auto-save-default nil) ;no ~files everywhere
 (setq make-backup-files nil) ;and I mean it
 (setq auto-complete-mode t) ;tab auto-completes commands
-(setq x-select-enable-clipboard t)
+(setq x-select-enable-clipboard t) ;use system clipboard
 (if window-system ;84x25 window please, but may have to start emacs with arg:
     (set-frame-size (selected-frame) 84 25)) ;-geometry 84x25
 (setq frame-title-format '(buffer-file-name "%f")) ;Set window title to this.
 (global-hi-lock-mode 1) ;highlight mode everywhere
 (menu-bar-mode 0) ;no menu bar
+(setq scroll-step 1) ;scroll by lines, not pages
+(setq default-major-mode 'text-mode) ;new buffer = text
 ;;; }
 
 (custom-set-faces
@@ -145,39 +147,36 @@
   (c-set-offset 'defun-close 0))
 (defun no_indents ()
   (set (make-local-variable 'electric-indent-mode) nil))
-(defun lisp_width () setq-local 'tab-width 2)
-(defun lisp_offsets () set (make-local-variable 'lisp-indent-offset) 2
-  set (make-local-variable 'lisp-indent-function) 2)
-(defun 2_indent () setq-local default-tab-width 2)
+(defun lisp_offsets ()
+  ((set (make-local-variable 'lisp-indent-offset) 2)
+   (set (make-local-variable 'lisp-indent-function) 2)
+   (setq-local 'tab-width 2)))
+(defun 4_indent () (setq tab-width 4))
 
 ;; PHP: Pear standards
 (add-hook 'php-mode-hook 'pear/php-mode-init)
 
 ;; Org: No electric indents
 (add-hook 'org-mode-hook 'no_indents)
+(add-hook 'org-mode-hook '4_indent)
 
-;; Python: No electric indents
+;; Python
 (add-hook 'python-mode-hook 'no_indents)
+(add-hook 'python-mode-hook '4_indent)
 
-;; R: 2 space indent
-(add-hook 'ess-mode-hook '2_indent)
+;; R
 
 ;; C/C++
-(add-hook 'c-mode-hook '2_indent)
-(add-hook 'c++-mode-hook '2_indent)
 
-;; D: 2 space indent
+;; D
 (load-file "~/.emacs.d/modes/d-mode.el")
 (autoload 'd-mode "d-mode" "Major mode for editing D code." t)
 (add-to-list 'auto-mode-alist '("\\.d[i]?\\'" . d-mode))
-(add-hook 'd-mode-hook '2_indent)
 
 ;; Lisps: No electric indents, 2 space indent
 (add-hook 'lisp-mode 'no_indents)
-(add-hook 'lisp-mode 'lisp_width)
 (add-hook 'lisp-mode 'lisp_offsets)
 (add-hook 'emacs-lisp-mode-hook 'no_indents)
-(add-hook 'emacs-lisp-mode 'lisp_width)
 (add-hook 'emacs-lisp-mode 'lisp_offsets)
 
 ;; HTML: Use web-mode, not html-mode
