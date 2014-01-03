@@ -84,6 +84,7 @@
 
 (require 'package)
 (require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
 (package-initialize)
 (setq package-archives
       '(("ELPA" . "http://tromey.com/elpa/")
@@ -128,7 +129,7 @@
  '(enh-ruby-op-face ((t (:foreground "color-34"))) t)
  '(enh-ruby-regexp-delimiter-face ((t (:foreground "color-160"))) t)
  '(enh-ruby-string-delimiter-face ((t (:foreground "color-34"))) t)
- '(fringe ((t (:background "blue4")))))
+ '(fringe ((t (:background "midnight blue")))))
 
 ;;; Modes and hooks
 
@@ -156,9 +157,12 @@
 ;; PHP: Pear standards
 (add-hook 'php-mode-hook 'pear/php-mode-init)
 
-;; Org: No electric indents
+;; Org: No electric indents, close todo's with time and notes
 (add-hook 'org-mode-hook 'no_indents)
 (add-hook 'org-mode-hook '4_indent)
+(setq org-log-done 'time)
+(setq org-log-done 'note)
+(define-key global-map "\C-ca" 'org-agenda)
 
 ;; Python
 (add-hook 'python-mode-hook 'no_indents)
@@ -188,17 +192,12 @@
 (defun bash () (interactive) (ansi-term "/bin/bash"))
 (defun path () (interactive) (message (buffer-file-name)))
 (defun whitesmith-mode ()
-  "Switch to Whitesmith Indent Mode without the overextended close braces."
   (interactive)
   (c-set-style "whitesmith")
   (c-set-offset 'brace-list-close 0)
   (c-set-offset 'defun-close 0))
-
-;;; Org mode shenanigans
-
-(setq org-log-done 'time)
-(setq org-log-done 'note)
-(define-key global-map "\C-ca" 'org-agenda)
+(defun long_lines () (interactive)
+  (highlight-lines-matching-regexp ".\\{81\\}" 'hi-red-b))
 
 ;;; Hotkeys and chords
 
@@ -206,16 +205,17 @@
 (global-set-key (kbd "C-M-/") 'hippie-expand)
 (global-set-key (kbd "M-/") 'auto-complete)
 (global-set-key [f5] 'whitesmith-mode)
-(global-set-key [f8]
-  (lambda () (interactive)
-    (highlight-lines-matching-regexp ".\\{81\\}" 'hi-blue)))
+(global-set-key [f8] 'long_lines)
 (global-set-key [f9] 'auto-complete-mode)
 (global-set-key [f12] 'menu-bar-mode)
 
 ;;; Theme
 ;;; (So if emacs blinds you when you start up, it has a broken ~/.emacs)
 
-(load-theme 'word-perfect t)
+(require 'color-theme)
+(color-theme-initialize)
+(setq color-theme-is-global t)
+(color-theme-sitaramv-solaris)
 
 ;; Also, if emacs themes, but doesn't open an argumented file,
 ;; Some lisp in .emacs was wrong. x_x
