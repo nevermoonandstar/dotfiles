@@ -213,10 +213,13 @@
 ;;; (So if emacs blinds you when you start up, it has a broken ~/.emacs)
 
 (require 'color-theme)
-(color-theme-initialize)
-(setq color-theme-is-global t)
-(color-theme-sitaramv-solaris)
+(eval-after-load "color-theme"
+  '(progn
+     (color-theme-initialize)
+     (if window-system
+         (color-theme-sitaramv-solaris)
+       (run-with-timer 1 nil 'color-theme-sitaramv-solaris))))
 
 ;; Also, if emacs themes, but doesn't open an argumented file,
 ;; Some lisp in .emacs was wrong. x_x
-;; Hours wasted putting parens all over the place: 2
+;; Hours wasted putting parens all over the place: 3
