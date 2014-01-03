@@ -89,9 +89,6 @@
         ("gnu" . "http://elpa.gnu.org/packages/")
         ("marmalade" . "http://marmalade-repo.org/packages/")
         ("melpa" . "http://melpa.milkbox.net/packages/")))
-(load-file "~/.emacs.d/emacs-for-python/epy-init.el") ;ESS $PATH
-(add-to-list 'load-path "~/.emacs.d/ess/lisp") (load "ess-site") ;load ESS
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 ;;; void style_n_behavior(defaults)
 ;;; {
@@ -185,6 +182,8 @@
 (add-hook 'python-mode-hook '4_indent)
 
 ;; R
+(load-file "~/.emacs.d/emacs-for-python/epy-init.el") ;ESS $PATH
+(add-to-list 'load-path "~/.emacs.d/ess/lisp") (load "ess-site") ;load ESS
 (add-hook 'ess-mode-hook 'long_lines)
 
 ;; C/C++
@@ -222,6 +221,7 @@
 ;;; Theme
 ;;; (So if emacs blinds you when you start up, it has a broken ~/.emacs)
 
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (require 'color-theme)
 (defun my_color_theme () (color-theme-sitaramv-solaris))
 (eval-after-load "color-theme"
