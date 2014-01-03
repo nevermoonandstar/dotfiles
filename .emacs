@@ -83,8 +83,6 @@
 ;;; Variables and dependencies
 
 (require 'package)
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'forward)
 (package-initialize)
 (setq package-archives
       '(("ELPA" . "http://tromey.com/elpa/")
@@ -97,6 +95,8 @@
 
 ;;; void style_n_behavior(defaults)
 ;;; {
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward) ;folder/file in event of duplicates
 (setq-default c-default-style "bsd"
   c-basic-offset 2) ;2 space, braces on own line one below code
 (electric-indent-mode t) ;auto-depth-indent
@@ -131,8 +131,9 @@
  '(enh-ruby-string-delimiter-face ((t (:foreground "color-34"))) t)
  '(fringe ((t (:background "midnight blue")))))
 
-;;; Modes and hooks
+;;; Functions
 
+;; Hook functions (style)
 (defun pear/php-mode-init () 
 ;; Pear coding standards : http://pear.php.net/manual/en/standards.indenting.php
   (setq case-fold-search t
@@ -154,7 +155,21 @@
    (setq-local 'tab-width 2)))
 (defun 4_indent () (setq tab-width 4))
 
+;; Interactive fuctions
+(defun zsh () (interactive) (ansi-term "/bin/zsh"))
+(defun bash () (interactive) (ansi-term "/bin/bash"))
+(defun path () (interactive) (message (buffer-file-name)))
+(defun whitesmith-mode () (interactive)
+  (c-set-style "whitesmith")
+  (c-set-offset 'brace-list-close 0)
+  (c-set-offset 'defun-close 0))
+(defun long_lines () (interactive)
+  (highlight-lines-matching-regexp ".\\{81\\}" 'hi-green-b))
+
+;;; Modes and hooks
+
 ;; PHP: Pear standards
+(add-hook 'php-mode-hook 'long_lines)
 (add-hook 'php-mode-hook 'pear/php-mode-init)
 
 ;; Org: No electric indents, close todo's with time and notes
@@ -165,39 +180,34 @@
 (define-key global-map "\C-ca" 'org-agenda)
 
 ;; Python
+(add-hook 'python-mode-hook 'long_lines)
 (add-hook 'python-mode-hook 'no_indents)
 (add-hook 'python-mode-hook '4_indent)
 
 ;; R
+(add-hook 'ess-mode-hook 'long_lines)
 
 ;; C/C++
+(add-hook 'c-mode-hook 'long_lines)
+(add-hook 'c++-mode-hook 'long_lines)
 
 ;; D
-(load-file "~/.emacs.d/modes/d-mode.el")
-(autoload 'd-mode "d-mode" "Major mode for editing D code." t)
-(add-to-list 'auto-mode-alist '("\\.d[i]?\\'" . d-mode))
+(load-file "~/.emacs.d/modes/d-mode.el") ;d-mode $PATH
+(autoload 'd-mode "d-mode" "Major mode for editing D code." t) ;d-mode init
+(add-to-list 'auto-mode-alist '("\\.d[i]?\\'" . d-mode)) ;d-mode in d files
+(add-hook 'd-mode-hook 'long_lines)
 
 ;; Lisps: No electric indents, 2 space indent
-(add-hook 'lisp-mode 'no_indents)
-(add-hook 'lisp-mode 'lisp_offsets)
+(add-hook 'lisp-mode-hook 'long_lines)
+(add-hook 'lisp-mode-hook 'no_indents)
+(add-hook 'lisp-mode-hook 'lisp_offsets)
+(add-hook 'emacs-lisp-mode-hook 'long_lines)
 (add-hook 'emacs-lisp-mode-hook 'no_indents)
 (add-hook 'emacs-lisp-mode 'lisp_offsets)
 
 ;; HTML: Use web-mode, not html-mode
+(add-hook 'html-mode-hook 'long_lines)
 (add-hook 'html-mode-hook 'web-mode)
-
-;;; Handy functions
-
-(defun zsh () (interactive) (ansi-term "/bin/zsh"))
-(defun bash () (interactive) (ansi-term "/bin/bash"))
-(defun path () (interactive) (message (buffer-file-name)))
-(defun whitesmith-mode ()
-  (interactive)
-  (c-set-style "whitesmith")
-  (c-set-offset 'brace-list-close 0)
-  (c-set-offset 'defun-close 0))
-(defun long_lines () (interactive)
-  (highlight-lines-matching-regexp ".\\{81\\}" 'hi-red-b))
 
 ;;; Hotkeys and chords
 
