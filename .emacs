@@ -167,7 +167,6 @@
 (add-hook 'lisp-mode-hook 'no_indents)
 (add-hook 'lisp-mode-hook 'lisp_offsets)
 (add-hook 'lisp-mode-hook 'pretty-lambda-mode)
-(add-hook 'emacs-lisp-mode-hook 'long_lines)
 (add-hook 'emacs-lisp-mode-hook 'no_indents)
 (add-hook 'emacs-lisp-mode 'lisp_offsets)
 (add-hook 'emacs-lisp-mode-hook 'pretty-lambda-mode)
