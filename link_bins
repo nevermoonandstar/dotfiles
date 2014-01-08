@@ -1,0 +1,6 @@
+#/bin/sh
+
+for i in $1
+do
+    ln -s "$1" "$HOME/bin/${1##*/}"
+done
