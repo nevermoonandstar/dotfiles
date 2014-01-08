@@ -3,11 +3,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default bold shadow italic underline bold bold-italic bold])
- '(ansi-color-names-vector
-   ["black" "#d55e00" "#009e73""#f8ec59" "#0072b2"
-    "#cc79a7" "#56b4e9" "white"])
+ '(android-mode-sdk-dir "~/opt/android")
+ '(ansi-color-faces-vector [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(c-set-offset (quote defun-close) t)
  '(column-number-mode t)
  '(compilation-message-face (quote default))
@@ -16,69 +14,32 @@
  '(global-font-lock-mode 1)
  '(global-linum-mode 1)
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
- '(highlight-tail-colors
-   (quote (("#073642" . 0)
-           ("#546E00" . 20)
-           ("#00736F" . 30)
-           ("#00629D" . 50)
-           ("#7B6000" . 60)
-           ("#8B2C02" . 70)
-           ("#93115C" . 85)
-           ("#073642" . 100))))
+ '(highlight-tail-colors (quote (("#073642" . 0) ("#546E00" . 20) ("#00736F" . 30) ("#00629D" . 50) ("#7B6000" . 60) ("#8B2C02" . 70) ("#93115C" . 85) ("#073642" . 100))))
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
  '(magit-diff-use-overlays nil)
  '(markdown-command "~/Markdown_1.0.1/markdown.pl")
  '(markdown-command-needs-filename t)
  '(markdown-enable-math t)
- '(org-agenda-files
-   (quote ("~/Dropbox/org_files" "~/Dropbox/org" "~/org_files" "~/org")))
+ '(org-agenda-files (quote ("~/Dropbox/org_files" "~/Dropbox/org" "~/org_files" "~/org")))
  '(org-support-shift-select t)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
- '(syslog-debug-face
-   (quote ((t :background unspecified :foreground "#2aa198" :weight bold))))
- '(syslog-error-face
-   (quote ((t :background unspecified :foreground "#dc322f" :weight bold))))
+ '(syslog-debug-face (quote ((t :background unspecified :foreground "#2aa198" :weight bold))))
+ '(syslog-error-face (quote ((t :background unspecified :foreground "#dc322f" :weight bold))))
  '(syslog-hour-face (quote ((t :background unspecified :foreground "#859900"))))
- '(syslog-info-face
-   (quote ((t :background unspecified :foreground "#268bd2" :weight bold))))
+ '(syslog-info-face (quote ((t :background unspecified :foreground "#268bd2" :weight bold))))
  '(syslog-ip-face (quote ((t :background unspecified :foreground "#b58900"))))
  '(syslog-su-face (quote ((t :background unspecified :foreground "#d33682"))))
- '(syslog-warn-face
-   (quote ((t :background unspecified :foreground "#cb4b16" :weight bold))))
+ '(syslog-warn-face (quote ((t :background unspecified :foreground "#cb4b16" :weight bold))))
  '(tab-always-indent 1)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
  '(vc-annotate-background nil)
- '(vc-annotate-color-map
-   (quote
-    ((20 . "#cc6666")
-     (40 . "#de935f")
-     (60 . "#f0c674")
-     (80 . "#b5bd68")
-     (100 . "#8abeb7")
-     (120 . "#81a2be")
-     (140 . "#b294bb")
-     (160 . "#cc6666")
-     (180 . "#de935f")
-     (200 . "#f0c674")
-     (220 . "#b5bd68")
-     (240 . "#8abeb7")
-     (260 . "#81a2be")
-     (280 . "#b294bb")
-     (300 . "#cc6666")
-     (320 . "#de935f")
-     (340 . "#f0c674")
-     (360 . "#b5bd68"))))
+ '(vc-annotate-color-map (quote ((20 . "#cc6666") (40 . "#de935f") (60 . "#f0c674") (80 . "#b5bd68") (100 . "#8abeb7") (120 . "#81a2be") (140 . "#b294bb") (160 . "#cc6666") (180 . "#de935f") (200 . "#f0c674") (220 . "#b5bd68") (240 . "#8abeb7") (260 . "#81a2be") (280 . "#b294bb") (300 . "#cc6666") (320 . "#de935f") (340 . "#f0c674") (360 . "#b5bd68"))))
  '(vc-annotate-very-old-color nil)
  '(w32-send-sys-command 61488)
- '(weechat-color-list
-   (quote
-    (unspecified "#002b36" "#073642" "#990A1B" "#dc322f"
-                 "#546E00" "#859900" "#7B6000" "#b58900"
-                 "#00629D" "#268bd2" "#93115C" "#d33682"
-                 "#00736F" "#2aa198" "#839496" "#657b83"))))
+ '(weechat-color-list (quote (unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#839496" "#657b83"))))
 
 ;;; Variables and dependencies
 
@@ -94,6 +55,7 @@
 ;;; {
 (require 'uniquify)
 (require 'pretty-lambdada)
+(require 'android-mode)
 (setq uniquify-buffer-name-style 'forward) ;folder/file in event of duplicates
 (setq-default c-default-style "bsd"
   c-basic-offset 2) ;2 space, braces on own line one below code
@@ -120,10 +82,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default
-    ((t
-      (:family "monoOne" :foundry "unknown" :slant normal
-               :weight normal :height 128 :width normal))))
+ '(default ((t (:family "monoOne" :foundry "unknown" :slant normal :weight normal :height 128 :width normal))))
  '(enh-ruby-op-face ((t (:foreground "color-34"))) t)
  '(enh-ruby-regexp-delimiter-face ((t (:foreground "color-160"))) t)
  '(enh-ruby-string-delimiter-face ((t (:foreground "color-34"))) t)
