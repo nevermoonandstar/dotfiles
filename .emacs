@@ -93,6 +93,7 @@
 ;;; void style_n_behavior(defaults)
 ;;; {
 (require 'uniquify)
+(require 'pretty-lambdada)
 (setq uniquify-buffer-name-style 'forward) ;folder/file in event of duplicates
 (setq-default c-default-style "bsd"
   c-basic-offset 2) ;2 space, braces on own line one below code
@@ -172,6 +173,7 @@
 ;; Org: No electric indents, close todo's with time and notes
 (add-hook 'org-mode-hook 'no_indents)
 (add-hook 'org-mode-hook '4_indent)
+(add-hook 'org-mode-hook 'pretty-lambda-mode)
 (setq org-log-done 'time)
 (setq org-log-done 'note)
 (define-key global-map "\C-ca" 'org-agenda)
@@ -180,33 +182,41 @@
 (add-hook 'python-mode-hook 'long_lines)
 (add-hook 'python-mode-hook 'no_indents)
 (add-hook 'python-mode-hook '4_indent)
+(add-hook 'python-mode-hook 'pretty-lambda-mode)
 
 ;; R
 (load-file "~/.emacs.d/emacs-for-python/epy-init.el") ;ESS $PATH
 (add-to-list 'load-path "~/.emacs.d/ess/lisp") (load "ess-site") ;load ESS
 (add-hook 'ess-mode-hook 'long_lines)
+(add-hook 'ess-mode-hook 'pretty-lambda-mode)
 
 ;; C/C++
 (add-hook 'c-mode-hook 'long_lines)
+(add-hook 'c-mode-hook 'pretty-lambda-mode)
 (add-hook 'c++-mode-hook 'long_lines)
+(add-hook 'c++-mode-hook 'pretty-lambda-mode)
 
 ;; D
 (load-file "~/.emacs.d/modes/d-mode.el") ;d-mode $PATH
 (autoload 'd-mode "d-mode" "Major mode for editing D code." t) ;d-mode init
 (add-to-list 'auto-mode-alist '("\\.d[i]?\\'" . d-mode)) ;d-mode in d files
 (add-hook 'd-mode-hook 'long_lines)
+(add-hook 'd-mode-hook 'pretty-lambda-mode)
 
 ;; Lisps: No electric indents, 2 space indent
 (add-hook 'lisp-mode-hook 'long_lines)
 (add-hook 'lisp-mode-hook 'no_indents)
 (add-hook 'lisp-mode-hook 'lisp_offsets)
+(add-hook 'lisp-mode-hook 'pretty-lambda-mode)
 (add-hook 'emacs-lisp-mode-hook 'long_lines)
 (add-hook 'emacs-lisp-mode-hook 'no_indents)
 (add-hook 'emacs-lisp-mode 'lisp_offsets)
+(add-hook 'emacs-lisp-mode-hook 'pretty-lambda-mode)
 
 ;; HTML: Use web-mode, not html-mode
 (add-hook 'html-mode-hook 'long_lines)
 (add-hook 'html-mode-hook 'web-mode)
+(add-hook 'html-mode-hook 'pretty-lambda-mode)
 
 ;;; Hotkeys and chords
 
