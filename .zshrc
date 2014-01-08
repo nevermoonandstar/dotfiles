@@ -104,15 +104,22 @@ alias -g gpp='g++' # I don't need a shift key!
 #ls
 alias -g ls='ls -lh --color' # Human sizes and color in list form
 alias -g lsa='ls -lha --color'
+alias -g lsA='ls -lhA --color'
 alias -g lx='ls -XB'         # Sort by extension
 alias -g lxa='lsa -XB'
+alias -g lxA='lsA -XB'
 alias -g lk='ls -Sr'         # Sort by size, biggest last
 alias -g lka='lsa -Sr'
+alias -g lkA='lsA -Sr'
 alias -g lt='ls -tr'         # Sort by date, recent last
 alias -g lta='lsa -tr'
+alias -g ltA='lsA -tr'
 alias -g lc='ls -tcr'        # Sort by modified time, recent last
 alias -g lca='lsa -tcr'
-alias -g lu='ls -tur'        # Sort by access time, recent last
+alias -g lcA='lsA -tcr'
+alias -g lt='ls -tur'        # Sort by access time, recent last
+alias -g lta='lsa -tur'
+alias -g ltA='lsA -tur'
 # opted not to create a 'lua' because of lua being a programming language.
 # ltree: Show directory structure in a tree format
 # source: http://www.commandlinefu.com/commands/view/710/graphical-tree-of-sub-directories
