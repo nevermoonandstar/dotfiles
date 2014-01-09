@@ -79,6 +79,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 ### Add Android SDK to PATH
 PATH=$PATH:~/opt/android/tools
+PATH=$PATH:~/opt/android/platform-tools
 
 ### Aliases
 
