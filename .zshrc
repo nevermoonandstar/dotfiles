@@ -158,6 +158,7 @@ BLUE=%{$(tput setaf 18)%}
 PURPLE=%{$(tput setaf 165)%}
 CYAN=%{$(tput setaf 51)%}
 WHITE=%{$(tput setaf 255)%}
+GRAY=%{$(tput setaf 249)%}
 RESET=%{$(tput sgr 0)%}
 
 ### Needed for vcprompt (~/bin/vcprompt)
@@ -168,8 +169,8 @@ setopt prompt_subst
 # {gr}        {red}          {gr}{normal}        {yl}
 # [user@host] [~/path/to/dir] $ \                [version:control]
 # > {gr}
-PS1='${BOLD}${WHITE}$(pyhoc "%bl%bd")${RED}%#${RESET} '
-RPROMPT='${BOLD}${WHITE}$(vcprompt -f "[%n:%b]")${RESET}'
+PS1='${BOLD}${GRAY}$(pyhoc "%bl%bd")${RED}%#${RESET} '
+RPROMPT='${BOLD}${GRAY}$(vcprompt -f "[%n:%b]")${RESET}'
 PS2='${RED}>${RESET} '
 
 rvm use default 1> /dev/null 2> /dev/null # Initialize Ruby via RVM silently
