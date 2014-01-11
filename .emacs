@@ -86,7 +86,7 @@
  '(enh-ruby-op-face ((t (:foreground "color-34"))) t)
  '(enh-ruby-regexp-delimiter-face ((t (:foreground "color-160"))) t)
  '(enh-ruby-string-delimiter-face ((t (:foreground "color-34"))) t)
- '(fringe ((t (:background "midnight blue")))))
+ '(fringe ((t (:background "gray14")))))
 
 ;;; Functions
 
@@ -191,7 +191,8 @@
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (require 'color-theme)
-(defun my_color_theme () (color-theme-sitaramv-solaris))
+(require 'color-theme-wombat)
+(defun my_color_theme () (color-theme-wombat))
 (eval-after-load "color-theme"
   '(progn
      (color-theme-initialize)

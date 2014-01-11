@@ -4,7 +4,7 @@ filetype indent on
 syntax on
 let g:solarized_termcolors=256
 set background=dark
-colorscheme calmar256-dark
+colorscheme wombat256
 set t_Co=256
 
 set guifont=monoOne\ 13
