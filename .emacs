@@ -196,9 +196,7 @@
 (eval-after-load "color-theme"
   '(progn
      (color-theme-initialize)
-     (if window-system
-         (my_color_theme)
-       (run-with-timer 1 nil 'my_color_theme))))
+       (run-with-timer 1 nil 'my_color_theme)))
 
 ;; Also, if emacs themes, but doesn't open an argumented file,
 ;; Some lisp in .emacs was wrong. x_x
