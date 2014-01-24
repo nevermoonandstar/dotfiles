@@ -5,12 +5,10 @@
  ;; If there is more than one, they won't work right.
  '(android-mode-sdk-dir "~/opt/android")
  '(ansi-color-faces-vector [default bold shadow italic underline bold bold-italic bold])
- '(ansi-color-names-vector ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(c-set-offset (quote defun-close) t)
  '(column-number-mode t)
  '(compilation-message-face (quote default))
  '(enh-ruby-extra-keywords (quote ("public" "private")))
- '(fci-rule-color "#282a2e")
  '(global-font-lock-mode 1)
  '(global-linum-mode 1)
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
@@ -35,9 +33,6 @@
  '(tab-always-indent 1)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
- '(vc-annotate-background nil)
- '(vc-annotate-color-map (quote ((20 . "#cc6666") (40 . "#de935f") (60 . "#f0c674") (80 . "#b5bd68") (100 . "#8abeb7") (120 . "#81a2be") (140 . "#b294bb") (160 . "#cc6666") (180 . "#de935f") (200 . "#f0c674") (220 . "#b5bd68") (240 . "#8abeb7") (260 . "#81a2be") (280 . "#b294bb") (300 . "#cc6666") (320 . "#de935f") (340 . "#f0c674") (360 . "#b5bd68"))))
- '(vc-annotate-very-old-color nil)
  '(w32-send-sys-command 61488)
  '(weechat-color-list (quote (unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#839496" "#657b83"))))
 
@@ -86,7 +81,13 @@
  '(enh-ruby-op-face ((t (:foreground "color-34"))) t)
  '(enh-ruby-regexp-delimiter-face ((t (:foreground "color-160"))) t)
  '(enh-ruby-string-delimiter-face ((t (:foreground "color-34"))) t)
- '(fringe ((t (:background "gray14")))))
+ '(linum ((t (:background "#232323" :foreground "gray26"))))
+ '(minibuffer-prompt ((t (:foreground "#FF6600"))))
+ '(mode-line ((t (:background "#181818" :foreground "#CC7833" :box (:line-width -1 :color "#181818")))))
+ '(mode-line-buffer-id ((t (:background "#181818" :foreground "#FFC66D"))))
+ '(mode-line-emphasis ((t nil)))
+ '(mode-line-highlight ((t (:background "#181818" :box (:line-width -1 :color "#181818" :style released-button)))))
+ '(mode-line-inactive ((t (:inherit mode-line :background "#181818" :foreground "grey40" :weight light)))))
 
 ;;; Functions
 
@@ -191,8 +192,8 @@
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (require 'color-theme)
-(require 'color-theme-wombat)
-(defun my_color_theme () (color-theme-wombat))
+(load-file "~/.emacs.d/themes/color-theme-railscasts.el")
+(defun my_color_theme () (color-theme-railscasts))
 (eval-after-load "color-theme"
   '(progn
      (color-theme-initialize)
