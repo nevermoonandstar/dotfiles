@@ -185,6 +185,7 @@
 (global-set-key [f5] 'whitesmith-mode)
 (global-set-key [f8] 'long_lines)
 (global-set-key [f9] 'auto-complete-mode)
+(global-set-key [f10] 'global-linum-mode)
 (global-set-key [f12] 'menu-bar-mode)
 
 ;;; Theme
