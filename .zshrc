@@ -172,8 +172,8 @@ setopt prompt_subst
 # {gr}        {red}          {gr}{normal}        {yl}
 # [user@host] [~/path/to/dir] $ \                [version:control]
 # > {gr}
-PS1='${BOLD}$(pyhoc "%bl%bd")%#${RESET} '
-RPROMPT='${BOLD}$(vcprompt -f "[%n:%b]")${RESET}'
+PS1='${BOLD}$(~/bin/pyhoc "%bl%bd")%#${RESET} '
+RPROMPT='${BOLD}$(~/bin/vcprompt -f "[%n:%b]")${RESET}'
 PS2='${BOLD}>${RESET} '
 
 rvm use default 1> /dev/null 2> /dev/null # Initialize Ruby via RVM silently
