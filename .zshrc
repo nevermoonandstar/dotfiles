@@ -106,9 +106,9 @@ alias -g cgrep='grep --color=always' # [c]olor [grep]
 alias -g gpp='g++' # I don't need a shift key!
 
 #ls
-alias -g ls='ls -lh --color' # Human sizes and color in list form
-alias -g lsa='ls -lha --color'
-alias -g lsA='ls -lhA --color'
+alias -g ls='ls -lh' # Human sizes and color in list form
+alias -g lsa='ls -lha'
+alias -g lsA='ls -lhA'
 alias -g lx='ls -XB'         # Sort by extension
 alias -g lxa='lsa -XB'
 alias -g lxA='lsA -XB'
