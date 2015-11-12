@@ -1,3 +1,5 @@
 [user]
 	name = Joyce Denton
 	email = thejoydenton@gmail.com
+[push]
+	default = simple
