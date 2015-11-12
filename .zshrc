@@ -3,7 +3,10 @@ export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
 
 ### Python Startup File
-export PYTHONSTARTUP=/home/hoppe/.pythonrc.py
+export PYTHONSTARTUP=/home/jdenton/.pythonrc.py
+
+### Default Editor
+export EDITOR=vim
 
 ### Clear pyhoc folder
 find ~/.pyhoc -type f -name ".*" -delete
@@ -139,7 +142,7 @@ alias -g vi='vim'                 # vim always.
 alias -g v='vim'                  # Dial v for Vim!
 alias -g st2='sublime_text2'
 alias -g st3='sublime_text3'
-alias -g st='st3'                 # Sublime Text
+alias -g st='sublime_text3'        # Sublime Text
 alias -g s='source'               # Or s for a new bash config.
 alias -g py='python3.3.3'         # Python! A symlink in ~/bin
 alias -g py2='python'             # Or 2.7.x, if you _have_ to.
@@ -163,6 +166,12 @@ CYAN=%{$(tput setaf 51)%}
 WHITE=%{$(tput setaf 255)%}
 GRAY=%{$(tput setaf 249)%}
 RESET=%{$(tput sgr 0)%}
+
+case $TERM in
+    xterm*)
+        precmd () {print -Pn "\e]0;%n@%m: %~\a"}
+    ;;
+esac
 
 ### Needed for vcprompt (~/bin/vcprompt)
 ### and Pyhoc (~/bin/pyhoc)

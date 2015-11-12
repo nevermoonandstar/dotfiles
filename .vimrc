@@ -1,13 +1,19 @@
+scriptencoding utf-8
+set encoding=utf-8
 set nocompatible
 filetype plugin on
 filetype indent on
 syntax on
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 set background=dark
-colorscheme railscasts
-set t_Co=256
+colorscheme solarized
+set t_Co=16
 
-set guifont=monoOne\ 13
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_no_default_key_mappings=1
+
+set mouse=a
+set guifont=Inconsolata\ Bold\ 18
 set guioptions-=m " remove menu bar
 set guioptions-=T " remove toolbar
 set guioptions-=r " remove right scrollbar
@@ -56,6 +62,14 @@ function MyDiff()
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
+function WordCount()
+    let s:old_status = v:statusmsg
+    exe "silent normal g\<c-g>"
+    let s:word_count = str2nr(split(v:statusmsg)[11])
+    let v:statusmsg = s:old_status
+    return s:word_count
+endfunction
+
 set fileformats=unix,dos,mac
 
 let g:netrw_liststyle=3 " :e begins in tree view
@@ -83,8 +97,8 @@ set showmatch " highlight matches while searching
 set incsearch " highlight matches while typing for searches
 set showcmd " show last command
 
-set list                     " list invisible characters,
-set listchars=tab:>·,trail:· " but only tabs and trailing spaces
+" List invisible characters
+set list listchars=tab:i\Â»,trail:\Â· " but only tabs and trailing spaces
 
 set ignorecase " ignore case while searching
 
@@ -126,3 +140,4 @@ map <F5> :set colorcolumn="" <cr>
 map <F12> :redraw! <cr>
     " F12: redraw screen
 map <Leader>r :redraw! <cr>
+
